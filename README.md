@@ -121,6 +121,7 @@ Frontend **Angular** ,Backend **Asp .NET Core Web API** ile oluşturulmuştur
   "DefaultConnection": "Server=YOUR_SERVER;Database=ToDoDb;Trusted_Connection=True;"
 }
 4. Entity Framework Migrations ile veritabanını oluşturun.
+- dotnet tool install --global dotnet-ef
 - dotnet ef database update
 5. API'yı çalıştırın.
 - dotnet run
