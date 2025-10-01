@@ -1,0 +1,41 @@
+# Visual Studio / .NET Temporary Files
+######################################
+*.log
+*.vspscc
+*.vssscc
+*.bak
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.pdb
+*.intellisense.cpc
+*.builds
+*.lib
+*.ncb
+*.testsettings
+*.trx
+*.vsix
+*.vsixmanifest
+
+# Build and Restore Output
+[Bb]in/
+[Oo]bj/
+.vs/
+.gitattributes
+
+# Node / Angular Temporary Files
+######################################
+# Dependencies
+/node_modules
+
+# Distribution Output
+/dist
+
+# Logs
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Miscellaneous
+.DS_Store
