@@ -12,8 +12,8 @@ AngularWithASP/
 │ ├─ Controllers/
 │ ├─ Entity/
 │ ├─ Handlers/
-│ │ └─ CommandHandler
-│ │ └─ QueryHandler
+│ │ └─ CommandHandler/
+│ │ └─ QueryHandler/
 │ ├─ Repository/
 │ ├─ Properties/
 │ │ └─ launchSettings.json
@@ -23,7 +23,7 @@ AngularWithASP/
 ├─ angularwithasp.client/ # Frontend (Angular)
 │ ├─ src/
 │ │ ├─ app/
-│ │ │ ├─ todo-list
+│ │ │ ├─ todo-list/
 │ ├─ angular.json
 │
 ├─ README.md
