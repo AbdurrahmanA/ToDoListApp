@@ -137,7 +137,6 @@ AngularWithASP/
 - SQL Server	
 - Node.js ve npm	
 - Angular CLI	
-- Entity Framework Core Tools
 
 **Backend kurulumu**
 1. Backend klasörüne gidin.
