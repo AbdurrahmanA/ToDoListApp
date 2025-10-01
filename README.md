@@ -3,6 +3,34 @@
 Bu proje CQRS mimarisi kullanılarak geliştirilmiş bir ToDo projesidir.
 Frontend **Angular** ,Backend **Asp .NET Core Web API** ile oluşturulmuştur
 
+## Dosya Yapısı
+
+```bash
+AngularWithASP/
+│
+├─ AngularWithASP.Server/ # Backend (ASP.NET Core Web API)
+│ ├─ Controllers/
+│ ├─ Entity/
+│ ├─ Handlers/
+│ │ └─ CommandHandler
+│ │ └─ QueryHandler
+│ ├─ Repository/
+│ ├─ Properties/
+│ │ └─ launchSettings.json
+│ ├─ appsettings.json
+│ └─ Program.cs 
+│
+├─ angularwithasp.client/ # Frontend (Angular)
+│ ├─ src/
+│ │ ├─ app/
+│ │ │ ├─ todo-list
+│ ├─ angular.json
+│
+├─ README.md
+└─ .gitignore
+```
+
+
 ## Kullanılan Teknolojiler
 
 **Backend**
@@ -121,6 +149,7 @@ Frontend **Angular** ,Backend **Asp .NET Core Web API** ile oluşturulmuştur
   "DefaultConnection": "Server=YOUR_SERVER;Database=ToDoDb;Trusted_Connection=True;"
 }
 4. Entity Framework Migrations ile veritabanını oluşturun.
+- dotnet tool install --global dotnet-ef
 - dotnet ef database update
 5. API'yı çalıştırın.
 - dotnet run

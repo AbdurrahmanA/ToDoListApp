@@ -3,12 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{287AE392-E7D9-45E0-9DE9-083CB89998EF}|AngularWithASP.Server\\AngularWithASP.Server.csproj|c:\\users\\aydin\\source\\repos\\angularwithasp\\angularwithasp.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{287AE392-E7D9-45E0-9DE9-083CB89998EF}|AngularWithASP.Server\\AngularWithASP.Server.csproj|solutionrelative:angularwithasp.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{287AE392-E7D9-45E0-9DE9-083CB89998EF}|AngularWithASP.Server\\AngularWithASP.Server.csproj|c:\\users\\aydin\\source\\repos\\angularwithasp\\angularwithasp.server\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{287AE392-E7D9-45E0-9DE9-083CB89998EF}|AngularWithASP.Server\\AngularWithASP.Server.csproj|solutionrelative:angularwithasp.server\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{287AE392-E7D9-45E0-9DE9-083CB89998EF}|AngularWithASP.Server\\AngularWithASP.Server.csproj|c:\\users\\aydin\\source\\repos\\angularwithasp\\angularwithasp.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{287AE392-E7D9-45E0-9DE9-083CB89998EF}|AngularWithASP.Server\\AngularWithASP.Server.csproj|solutionrelative:angularwithasp.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B53EE48-D1F6-17D7-016E-B39CBC72E3E5}|angularwithasp.client\\angularwithasp.client.esproj|c:\\users\\aydin\\source\\repos\\angularwithasp\\angularwithasp.client\\src\\app\\todo.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{0B53EE48-D1F6-17D7-016E-B39CBC72E3E5}|angularwithasp.client\\angularwithasp.client.esproj|solutionrelative:angularwithasp.client\\src\\app\\todo.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B53EE48-D1F6-17D7-016E-B39CBC72E3E5}|angularwithasp.client\\angularwithasp.client.esproj|c:\\users\\aydin\\source\\repos\\angularwithasp\\angularwithasp.client\\src\\app\\app.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{0B53EE48-D1F6-17D7-016E-B39CBC72E3E5}|angularwithasp.client\\angularwithasp.client.esproj|solutionrelative:angularwithasp.client\\src\\app\\app.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B53EE48-D1F6-17D7-016E-B39CBC72E3E5}|angularwithasp.client\\angularwithasp.client.esproj|c:\\users\\aydin\\source\\repos\\angularwithasp\\angularwithasp.client\\src\\app\\app.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{0B53EE48-D1F6-17D7-016E-B39CBC72E3E5}|angularwithasp.client\\angularwithasp.client.esproj|solutionrelative:angularwithasp.client\\src\\app\\app.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0B53EE48-D1F6-17D7-016E-B39CBC72E3E5}|angularwithasp.client\\angularwithasp.client.esproj|c:\\users\\aydin\\source\\repos\\angularwithasp\\angularwithasp.client\\src\\app\\todo-list\\todo-list.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
       "RelativeMoniker": "D:0:0:{0B53EE48-D1F6-17D7-016E-B39CBC72E3E5}|angularwithasp.client\\angularwithasp.client.esproj|solutionrelative:angularwithasp.client\\src\\app\\todo-list\\todo-list.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B53EE48-D1F6-17D7-016E-B39CBC72E3E5}|angularwithasp.client\\angularwithasp.client.esproj|c:\\users\\aydin\\source\\repos\\angularwithasp\\angularwithasp.client\\src\\app\\todo-list\\todo-item.model.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{0B53EE48-D1F6-17D7-016E-B39CBC72E3E5}|angularwithasp.client\\angularwithasp.client.esproj|solutionrelative:angularwithasp.client\\src\\app\\todo-list\\todo-item.model.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B53EE48-D1F6-17D7-016E-B39CBC72E3E5}|angularwithasp.client\\angularwithasp.client.esproj|c:\\users\\aydin\\source\\repos\\angularwithasp\\angularwithasp.client\\src\\main.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{0B53EE48-D1F6-17D7-016E-B39CBC72E3E5}|angularwithasp.client\\angularwithasp.client.esproj|solutionrelative:angularwithasp.client\\src\\main.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{0B53EE48-D1F6-17D7-016E-B39CBC72E3E5}|angularwithasp.client\\angularwithasp.client.esproj|c:\\users\\aydin\\source\\repos\\angularwithasp\\angularwithasp.client\\src\\app\\app-routing.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
+      "RelativeMoniker": "D:0:0:{0B53EE48-D1F6-17D7-016E-B39CBC72E3E5}|angularwithasp.client\\angularwithasp.client.esproj|solutionrelative:angularwithasp.client\\src\\app\\app-routing.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{287AE392-E7D9-45E0-9DE9-083CB89998EF}|AngularWithASP.Server\\AngularWithASP.Server.csproj|c:\\users\\aydin\\source\\repos\\angularwithasp\\angularwithasp.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{287AE392-E7D9-45E0-9DE9-083CB89998EF}|AngularWithASP.Server\\AngularWithASP.Server.csproj|solutionrelative:angularwithasp.server\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0B53EE48-D1F6-17D7-016E-B39CBC72E3E5}|angularwithasp.client\\angularwithasp.client.esproj|c:\\users\\aydin\\source\\repos\\angularwithasp\\angularwithasp.client\\src\\app\\todo-list\\todo-list.component.scss||{181FE41B-5A5D-479F-9F8F-BF665F4EBC2A}",
@@ -17,22 +49,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{0B53EE48-D1F6-17D7-016E-B39CBC72E3E5}|angularwithasp.client\\angularwithasp.client.esproj|c:\\users\\aydin\\source\\repos\\angularwithasp\\angularwithasp.client\\src\\app\\todo-list\\todo-list.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{0B53EE48-D1F6-17D7-016E-B39CBC72E3E5}|angularwithasp.client\\angularwithasp.client.esproj|solutionrelative:angularwithasp.client\\src\\app\\todo-list\\todo-list.component.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0B53EE48-D1F6-17D7-016E-B39CBC72E3E5}|angularwithasp.client\\angularwithasp.client.esproj|c:\\users\\aydin\\source\\repos\\angularwithasp\\angularwithasp.client\\src\\app\\app.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{0B53EE48-D1F6-17D7-016E-B39CBC72E3E5}|angularwithasp.client\\angularwithasp.client.esproj|solutionrelative:angularwithasp.client\\src\\app\\app.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0B53EE48-D1F6-17D7-016E-B39CBC72E3E5}|angularwithasp.client\\angularwithasp.client.esproj|c:\\users\\aydin\\source\\repos\\angularwithasp\\angularwithasp.client\\src\\app\\app-routing.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{0B53EE48-D1F6-17D7-016E-B39CBC72E3E5}|angularwithasp.client\\angularwithasp.client.esproj|solutionrelative:angularwithasp.client\\src\\app\\app-routing.module.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AC80F682-3D55-C8F8-4895-A4A9EDD49434}|\u00C7\u00F6z\u00FCm \u00D6\u011Feleri{AC80F682-3D55-C8F8-4895-A4A9EDD49434}|C:\\Users\\aydin\\source\\repos\\AngularWithASP\\README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}",
-      "RelativeMoniker": "D:0:0:{AC80F682-3D55-C8F8-4895-A4A9EDD49434}|\u00C7\u00F6z\u00FCm \u00D6\u011Feleri{AC80F682-3D55-C8F8-4895-A4A9EDD49434}|solutionrelative:README.md||{EFC0BB08-EA7D-40C6-A696-C870411A895B}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0B53EE48-D1F6-17D7-016E-B39CBC72E3E5}|angularwithasp.client\\angularwithasp.client.esproj|c:\\users\\aydin\\source\\repos\\angularwithasp\\angularwithasp.client\\src\\app\\todo-list\\todo-item.model.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{0B53EE48-D1F6-17D7-016E-B39CBC72E3E5}|angularwithasp.client\\angularwithasp.client.esproj|solutionrelative:angularwithasp.client\\src\\app\\todo-list\\todo-item.model.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{287AE392-E7D9-45E0-9DE9-083CB89998EF}|AngularWithASP.Server\\AngularWithASP.Server.csproj|c:\\users\\aydin\\source\\repos\\angularwithasp\\angularwithasp.server\\application\\repository\\todorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -49,18 +65,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{287AE392-E7D9-45E0-9DE9-083CB89998EF}|AngularWithASP.Server\\AngularWithASP.Server.csproj|c:\\users\\aydin\\source\\repos\\angularwithasp\\angularwithasp.server\\application\\entity\\todocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{287AE392-E7D9-45E0-9DE9-083CB89998EF}|AngularWithASP.Server\\AngularWithASP.Server.csproj|solutionrelative:angularwithasp.server\\application\\entity\\todocontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{287AE392-E7D9-45E0-9DE9-083CB89998EF}|AngularWithASP.Server\\AngularWithASP.Server.csproj|c:\\users\\aydin\\source\\repos\\angularwithasp\\angularwithasp.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{287AE392-E7D9-45E0-9DE9-083CB89998EF}|AngularWithASP.Server\\AngularWithASP.Server.csproj|solutionrelative:angularwithasp.server\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{287AE392-E7D9-45E0-9DE9-083CB89998EF}|AngularWithASP.Server\\AngularWithASP.Server.csproj|c:\\users\\aydin\\source\\repos\\angularwithasp\\angularwithasp.server\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{287AE392-E7D9-45E0-9DE9-083CB89998EF}|AngularWithASP.Server\\AngularWithASP.Server.csproj|solutionrelative:angularwithasp.server\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0B53EE48-D1F6-17D7-016E-B39CBC72E3E5}|angularwithasp.client\\angularwithasp.client.esproj|c:\\users\\aydin\\source\\repos\\angularwithasp\\angularwithasp.client\\src\\app\\todo.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{0B53EE48-D1F6-17D7-016E-B39CBC72E3E5}|angularwithasp.client\\angularwithasp.client.esproj|solutionrelative:angularwithasp.client\\src\\app\\todo.service.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{287AE392-E7D9-45E0-9DE9-083CB89998EF}|AngularWithASP.Server\\AngularWithASP.Server.csproj|c:\\users\\aydin\\source\\repos\\angularwithasp\\angularwithasp.server\\application\\handlers\\commandhandler\\update\\updatetodocommenthandler.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -99,10 +103,6 @@
       "RelativeMoniker": "D:0:0:{287AE392-E7D9-45E0-9DE9-083CB89998EF}|AngularWithASP.Server\\AngularWithASP.Server.csproj|solutionrelative:angularwithasp.server\\application\\handlers\\commandhandler\\delete\\deletetodocommand.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0B53EE48-D1F6-17D7-016E-B39CBC72E3E5}|angularwithasp.client\\angularwithasp.client.esproj|c:\\users\\aydin\\source\\repos\\angularwithasp\\angularwithasp.client\\src\\app\\app.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{0B53EE48-D1F6-17D7-016E-B39CBC72E3E5}|angularwithasp.client\\angularwithasp.client.esproj|solutionrelative:angularwithasp.client\\src\\app\\app.component.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0B53EE48-D1F6-17D7-016E-B39CBC72E3E5}|angularwithasp.client\\angularwithasp.client.esproj|c:\\users\\aydin\\source\\repos\\angularwithasp\\angularwithasp.client\\src\\app\\todo-list\\todo-list.component.scss||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
       "RelativeMoniker": "D:0:0:{0B53EE48-D1F6-17D7-016E-B39CBC72E3E5}|angularwithasp.client\\angularwithasp.client.esproj|solutionrelative:angularwithasp.client\\src\\app\\todo-list\\todo-list.component.scss||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     },
@@ -127,10 +127,6 @@
       "RelativeMoniker": "D:0:0:{0B53EE48-D1F6-17D7-016E-B39CBC72E3E5}|angularwithasp.client\\angularwithasp.client.esproj|solutionrelative:angularwithasp.client\\src\\styles.scss||{181FE41B-5A5D-479F-9F8F-BF665F4EBC2A}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0B53EE48-D1F6-17D7-016E-B39CBC72E3E5}|angularwithasp.client\\angularwithasp.client.esproj|c:\\users\\aydin\\source\\repos\\angularwithasp\\angularwithasp.client\\src\\main.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}",
-      "RelativeMoniker": "D:0:0:{0B53EE48-D1F6-17D7-016E-B39CBC72E3E5}|angularwithasp.client\\angularwithasp.client.esproj|solutionrelative:angularwithasp.client\\src\\main.ts||{0F2454B1-A556-402D-A7D0-1FDE7F99DEE0}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{0B53EE48-D1F6-17D7-016E-B39CBC72E3E5}|angularwithasp.client\\angularwithasp.client.esproj|c:\\users\\aydin\\source\\repos\\angularwithasp\\angularwithasp.client\\.vscode\\launch.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{0B53EE48-D1F6-17D7-016E-B39CBC72E3E5}|angularwithasp.client\\angularwithasp.client.esproj|solutionrelative:angularwithasp.client\\.vscode\\launch.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     }
@@ -142,11 +138,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 265,
-          "SelectedChildIndex": 9,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "app.module.ts",
               "DocumentMoniker": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\angularwithasp.client\\src\\app\\app.module.ts",
               "RelativeDocumentMoniker": "angularwithasp.client\\src\\app\\app.module.ts",
@@ -154,60 +150,11 @@
               "RelativeToolTip": "angularwithasp.client\\src\\app\\app.module.ts",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-09-30T10:12:08.863Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "ToDoController.cs",
-              "DocumentMoniker": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\AngularWithASP.Server\\Application\\Controllers\\ToDoController.cs",
-              "RelativeDocumentMoniker": "AngularWithASP.Server\\Application\\Controllers\\ToDoController.cs",
-              "ToolTip": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\AngularWithASP.Server\\Application\\Controllers\\ToDoController.cs",
-              "RelativeToolTip": "AngularWithASP.Server\\Application\\Controllers\\ToDoController.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-30T10:58:50.428Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "IToDoRepository.cs",
-              "DocumentMoniker": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\AngularWithASP.Server\\Application\\Repository\\IToDoRepository.cs",
-              "RelativeDocumentMoniker": "AngularWithASP.Server\\Application\\Repository\\IToDoRepository.cs",
-              "ToolTip": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\AngularWithASP.Server\\Application\\Repository\\IToDoRepository.cs",
-              "RelativeToolTip": "AngularWithASP.Server\\Application\\Repository\\IToDoRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAdAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-23T07:37:09.671Z"
+              "WhenOpened": "2025-09-30T10:12:08.863Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "ToDoRepository.cs",
-              "DocumentMoniker": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\AngularWithASP.Server\\Application\\Repository\\ToDoRepository.cs",
-              "RelativeDocumentMoniker": "AngularWithASP.Server\\Application\\Repository\\ToDoRepository.cs",
-              "ToolTip": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\AngularWithASP.Server\\Application\\Repository\\ToDoRepository.cs",
-              "RelativeToolTip": "AngularWithASP.Server\\Application\\Repository\\ToDoRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAwAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-23T07:37:21.756Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "README.md",
-              "DocumentMoniker": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\README.md",
-              "RelativeDocumentMoniker": "README.md",
-              "ToolTip": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\README.md",
-              "RelativeToolTip": "README.md",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001818|",
-              "WhenOpened": "2025-09-30T12:52:40.076Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "app-routing.module.ts",
               "DocumentMoniker": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\angularwithasp.client\\src\\app\\app-routing.module.ts",
               "RelativeDocumentMoniker": "angularwithasp.client\\src\\app\\app-routing.module.ts",
@@ -219,20 +166,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "todo-list.component.html",
-              "DocumentMoniker": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\angularwithasp.client\\src\\app\\todo-list\\todo-list.component.html",
-              "RelativeDocumentMoniker": "angularwithasp.client\\src\\app\\todo-list\\todo-list.component.html",
-              "ToolTip": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\angularwithasp.client\\src\\app\\todo-list\\todo-list.component.html",
-              "RelativeToolTip": "angularwithasp.client\\src\\app\\todo-list\\todo-list.component.html",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
-              "WhenOpened": "2025-09-26T06:58:36.199Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 10,
               "Title": "todo-list.component.scss",
               "DocumentMoniker": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\angularwithasp.client\\src\\app\\todo-list\\todo-list.component.scss",
               "RelativeDocumentMoniker": "angularwithasp.client\\src\\app\\todo-list\\todo-list.component.scss",
@@ -240,62 +174,158 @@
               "RelativeToolTip": "angularwithasp.client\\src\\app\\todo-list\\todo-list.component.scss",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.002663|",
-              "WhenOpened": "2025-09-30T10:10:41.101Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-30T10:10:41.101Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 5,
               "Title": "todo-list.component.ts",
               "DocumentMoniker": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\angularwithasp.client\\src\\app\\todo-list\\todo-list.component.ts",
               "RelativeDocumentMoniker": "angularwithasp.client\\src\\app\\todo-list\\todo-list.component.ts",
               "ToolTip": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\angularwithasp.client\\src\\app\\todo-list\\todo-list.component.ts",
               "RelativeToolTip": "angularwithasp.client\\src\\app\\todo-list\\todo-list.component.ts",
-              "ViewState": "AgIAACgAAAAAAAAAAAAgwC8AAAA2AAAAAAAAAA==",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAC8AAAA2AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-09-30T07:23:59.145Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-09-30T07:23:59.145Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 9,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\AngularWithASP.Server\\Program.cs",
               "RelativeDocumentMoniker": "AngularWithASP.Server\\Program.cs",
               "ToolTip": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\AngularWithASP.Server\\Program.cs",
               "RelativeToolTip": "AngularWithASP.Server\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACIAAAAdAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-30T10:42:15.287Z",
+              "WhenOpened": "2025-09-30T10:42:15.287Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\AngularWithASP.Server\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "AngularWithASP.Server\\Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\AngularWithASP.Server\\Properties\\launchSettings.json",
+              "RelativeToolTip": "AngularWithASP.Server\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-30T13:00:47.236Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "todo-item.model.ts",
-              "DocumentMoniker": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\angularwithasp.client\\src\\app\\todo-list\\todo-item.model.ts",
-              "RelativeDocumentMoniker": "angularwithasp.client\\src\\app\\todo-list\\todo-item.model.ts",
-              "ToolTip": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\angularwithasp.client\\src\\app\\todo-list\\todo-item.model.ts",
-              "RelativeToolTip": "angularwithasp.client\\src\\app\\todo-list\\todo-item.model.ts",
-              "ViewState": "AgIAAAAAAAAAAAAAAAA6wAgAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-09-29T08:58:38.252Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 2,
               "Title": "todo.service.ts",
               "DocumentMoniker": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\angularwithasp.client\\src\\app\\todo.service.ts",
               "RelativeDocumentMoniker": "angularwithasp.client\\src\\app\\todo.service.ts",
               "ToolTip": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\angularwithasp.client\\src\\app\\todo.service.ts",
               "RelativeToolTip": "angularwithasp.client\\src\\app\\todo.service.ts",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAwAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-09-29T06:45:01.858Z"
+              "WhenOpened": "2025-09-29T06:45:01.858Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "app.component.ts",
+              "DocumentMoniker": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\angularwithasp.client\\src\\app\\app.component.ts",
+              "RelativeDocumentMoniker": "angularwithasp.client\\src\\app\\app.component.ts",
+              "ToolTip": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\angularwithasp.client\\src\\app\\app.component.ts",
+              "RelativeToolTip": "angularwithasp.client\\src\\app\\app.component.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-09-29T12:37:43.339Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "main.ts",
+              "DocumentMoniker": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\angularwithasp.client\\src\\main.ts",
+              "RelativeDocumentMoniker": "angularwithasp.client\\src\\main.ts",
+              "ToolTip": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\angularwithasp.client\\src\\main.ts",
+              "RelativeToolTip": "angularwithasp.client\\src\\main.ts",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-09-22T14:20:35.001Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "todo-item.model.ts",
+              "DocumentMoniker": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\angularwithasp.client\\src\\app\\todo-list\\todo-item.model.ts",
+              "RelativeDocumentMoniker": "angularwithasp.client\\src\\app\\todo-list\\todo-item.model.ts",
+              "ToolTip": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\angularwithasp.client\\src\\app\\todo-list\\todo-item.model.ts",
+              "RelativeToolTip": "angularwithasp.client\\src\\app\\todo-list\\todo-item.model.ts",
+              "ViewState": "AgIAAAEAAAAAAAAAAAA2wAgAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
+              "WhenOpened": "2025-09-29T08:58:38.252Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\AngularWithASP.Server\\appsettings.json",
+              "RelativeDocumentMoniker": "AngularWithASP.Server\\appsettings.json",
+              "ToolTip": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\AngularWithASP.Server\\appsettings.json",
+              "RelativeToolTip": "AngularWithASP.Server\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-30T13:00:58.529Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 11,
+              "Title": "todo-list.component.html",
+              "DocumentMoniker": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\angularwithasp.client\\src\\app\\todo-list\\todo-list.component.html",
+              "RelativeDocumentMoniker": "angularwithasp.client\\src\\app\\todo-list\\todo-list.component.html",
+              "ToolTip": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\angularwithasp.client\\src\\app\\todo-list\\todo-list.component.html",
+              "RelativeToolTip": "angularwithasp.client\\src\\app\\todo-list\\todo-list.component.html",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-09-26T06:58:36.199Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ToDoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\AngularWithASP.Server\\Application\\Repository\\ToDoRepository.cs",
+              "RelativeDocumentMoniker": "AngularWithASP.Server\\Application\\Repository\\ToDoRepository.cs",
+              "ToolTip": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\AngularWithASP.Server\\Application\\Repository\\ToDoRepository.cs",
+              "RelativeToolTip": "AngularWithASP.Server\\Application\\Repository\\ToDoRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAwAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T07:37:21.756Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IToDoRepository.cs",
+              "DocumentMoniker": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\AngularWithASP.Server\\Application\\Repository\\IToDoRepository.cs",
+              "RelativeDocumentMoniker": "AngularWithASP.Server\\Application\\Repository\\IToDoRepository.cs",
+              "ToolTip": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\AngularWithASP.Server\\Application\\Repository\\IToDoRepository.cs",
+              "RelativeToolTip": "AngularWithASP.Server\\Application\\Repository\\IToDoRepository.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-23T07:37:09.671Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ToDoController.cs",
+              "DocumentMoniker": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\AngularWithASP.Server\\Application\\Controllers\\ToDoController.cs",
+              "RelativeDocumentMoniker": "AngularWithASP.Server\\Application\\Controllers\\ToDoController.cs",
+              "ToolTip": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\AngularWithASP.Server\\Application\\Controllers\\ToDoController.cs",
+              "RelativeToolTip": "AngularWithASP.Server\\Application\\Controllers\\ToDoController.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-30T10:58:50.428Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
               "Title": "ToDoContext.cs",
               "DocumentMoniker": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\AngularWithASP.Server\\Application\\Entity\\ToDoContext.cs",
               "RelativeDocumentMoniker": "AngularWithASP.Server\\Application\\Entity\\ToDoContext.cs",
@@ -307,31 +337,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "launchSettings.json",
-              "DocumentMoniker": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\AngularWithASP.Server\\Properties\\launchSettings.json",
-              "RelativeDocumentMoniker": "AngularWithASP.Server\\Properties\\launchSettings.json",
-              "ToolTip": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\AngularWithASP.Server\\Properties\\launchSettings.json",
-              "RelativeToolTip": "AngularWithASP.Server\\Properties\\launchSettings.json",
-              "ViewState": "AgIAABUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-09-30T13:00:47.236Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\AngularWithASP.Server\\appsettings.json",
-              "RelativeDocumentMoniker": "AngularWithASP.Server\\appsettings.json",
-              "ToolTip": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\AngularWithASP.Server\\appsettings.json",
-              "RelativeToolTip": "AngularWithASP.Server\\appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-09-30T13:00:58.529Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 16,
               "Title": "UpdateToDoCommentHandler.cs",
               "DocumentMoniker": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\AngularWithASP.Server\\Application\\Handlers\\CommandHandler\\Update\\UpdateToDoCommentHandler.cs",
               "RelativeDocumentMoniker": "AngularWithASP.Server\\Application\\Handlers\\CommandHandler\\Update\\UpdateToDoCommentHandler.cs",
@@ -343,7 +349,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 17,
               "Title": "CreateToDoCommandHandler.cs",
               "DocumentMoniker": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\AngularWithASP.Server\\Application\\Handlers\\CommandHandler\\Create\\CreateToDoCommandHandler.cs",
               "RelativeDocumentMoniker": "AngularWithASP.Server\\Application\\Handlers\\CommandHandler\\Create\\CreateToDoCommandHandler.cs",
@@ -355,7 +361,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 17,
+              "DocumentIndex": 18,
               "Title": "GetByIdQueryHandler.cs",
               "DocumentMoniker": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\AngularWithASP.Server\\Application\\Handlers\\QueryHandler\\GetById\\GetByIdQueryHandler.cs",
               "RelativeDocumentMoniker": "AngularWithASP.Server\\Application\\Handlers\\QueryHandler\\GetById\\GetByIdQueryHandler.cs",
@@ -367,7 +373,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 18,
+              "DocumentIndex": 19,
               "Title": "UpdateToDoCommand.cs",
               "DocumentMoniker": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\AngularWithASP.Server\\Application\\Handlers\\CommandHandler\\Update\\UpdateToDoCommand.cs",
               "RelativeDocumentMoniker": "AngularWithASP.Server\\Application\\Handlers\\CommandHandler\\Update\\UpdateToDoCommand.cs",
@@ -379,7 +385,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
+              "DocumentIndex": 20,
               "Title": "GetByIdQuery.cs",
               "DocumentMoniker": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\AngularWithASP.Server\\Application\\Handlers\\QueryHandler\\GetById\\GetByIdQuery.cs",
               "RelativeDocumentMoniker": "AngularWithASP.Server\\Application\\Handlers\\QueryHandler\\GetById\\GetByIdQuery.cs",
@@ -391,7 +397,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 20,
+              "DocumentIndex": 21,
               "Title": "GetAllToDoQueryHandler.cs",
               "DocumentMoniker": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\AngularWithASP.Server\\Application\\Handlers\\QueryHandler\\GetAll\\GetAllToDoQueryHandler.cs",
               "RelativeDocumentMoniker": "AngularWithASP.Server\\Application\\Handlers\\QueryHandler\\GetAll\\GetAllToDoQueryHandler.cs",
@@ -403,7 +409,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
+              "DocumentIndex": 22,
               "Title": "GetAllToDoQuery.cs",
               "DocumentMoniker": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\AngularWithASP.Server\\Application\\Handlers\\QueryHandler\\GetAll\\GetAllToDoQuery.cs",
               "RelativeDocumentMoniker": "AngularWithASP.Server\\Application\\Handlers\\QueryHandler\\GetAll\\GetAllToDoQuery.cs",
@@ -415,7 +421,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 22,
+              "DocumentIndex": 23,
               "Title": "DeleteToDoCommandHandler.cs",
               "DocumentMoniker": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\AngularWithASP.Server\\Application\\Handlers\\CommandHandler\\Delete\\DeleteToDoCommandHandler.cs",
               "RelativeDocumentMoniker": "AngularWithASP.Server\\Application\\Handlers\\CommandHandler\\Delete\\DeleteToDoCommandHandler.cs",
@@ -427,7 +433,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 23,
+              "DocumentIndex": 24,
               "Title": "DeleteToDoCommand.cs",
               "DocumentMoniker": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\AngularWithASP.Server\\Application\\Handlers\\CommandHandler\\Delete\\DeleteToDoCommand.cs",
               "RelativeDocumentMoniker": "AngularWithASP.Server\\Application\\Handlers\\CommandHandler\\Delete\\DeleteToDoCommand.cs",
@@ -436,18 +442,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-23T12:32:01.444Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "app.component.ts",
-              "DocumentMoniker": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\angularwithasp.client\\src\\app\\app.component.ts",
-              "RelativeDocumentMoniker": "angularwithasp.client\\src\\app\\app.component.ts",
-              "ToolTip": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\angularwithasp.client\\src\\app\\app.component.ts",
-              "RelativeToolTip": "angularwithasp.client\\src\\app\\app.component.ts",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-09-29T12:37:43.339Z"
             },
             {
               "$type": "Document",
@@ -523,18 +517,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 31,
-              "Title": "main.ts",
-              "DocumentMoniker": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\angularwithasp.client\\src\\main.ts",
-              "RelativeDocumentMoniker": "angularwithasp.client\\src\\main.ts",
-              "ToolTip": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\angularwithasp.client\\src\\main.ts",
-              "RelativeToolTip": "angularwithasp.client\\src\\main.ts",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003213|",
-              "WhenOpened": "2025-09-22T14:20:35.001Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
               "Title": "launch.json",
               "DocumentMoniker": "C:\\Users\\aydin\\source\\repos\\AngularWithASP\\angularwithasp.client\\.vscode\\launch.json",
               "RelativeDocumentMoniker": "angularwithasp.client\\.vscode\\launch.json",
