@@ -53,6 +53,8 @@ AngularWithASP/
 
   - Response :
 
+```bash
+
 [
   {
     "id": "4ae59acd-8fc5-4c5a-a650-357c35f40077",
@@ -69,7 +71,7 @@ AngularWithASP/
     "createdAt": "2025-09-29T16:24:51.8011358"
   }
 ]
-
+```
 
     
 **Post /api/ToDo**
@@ -78,6 +80,7 @@ AngularWithASP/
 
 - Response :
 
+```bash
 {
   "id": "19317550-d35e-4d1e-9838-d30ac15a9df2",
   "title": "Projeyi Github'a Yükle",
@@ -85,13 +88,14 @@ AngularWithASP/
   "isCompleted": false,
   "createdAt": "2025-10-01T10:41:19.7639152+03:00"
 }
-
+```
 **GET /api/ToDo/{id}**
 
 `https://localhost:7261/api/ToDo/276eae14-8473-40e8-9340-8afee6a406c7`
 
 - Response :
 
+```bash
 {
   "id": "276eae14-8473-40e8-9340-8afee6a406c7",
   "title": "Angular",
@@ -99,13 +103,14 @@ AngularWithASP/
   "isCompleted": false,
   "createdAt": "2025-09-29T14:07:13.1611192"
 }
-
+```
 **DELETE /api/ToDo/{id}**
 
 `https://localhost:7261/api/ToDo/ecc7f2a2-47a9-4178-8f5d-812f49be6275`
 
 - Response :
 
+```bash
 {
   "id": "ecc7f2a2-47a9-4178-8f5d-812f49be6275",
   "title": "test",
@@ -113,6 +118,7 @@ AngularWithASP/
   "isCompleted": true,
   "createdAt": "2025-09-30T14:48:22.2798793"
 }
+```
 
 **PUT /api/ToDo/{id}**
 
@@ -120,7 +126,7 @@ AngularWithASP/
 
 
 - Response :
-
+```bash
 {
   "id": "276eae14-8473-40e8-9340-8afee6a406c7",
   "title": "Proje teslim",
@@ -128,7 +134,7 @@ AngularWithASP/
   "isCompleted": true,
   "createdAt": "2025-09-29T14:07:13.1611192"
 }
-
+```
 ## Projeyi Çalıştırma ve Setup Adımları
 
 **Projeyi Çalıştırmak İçin Gerekli Önkoşullar**
