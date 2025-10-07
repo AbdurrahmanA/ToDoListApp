@@ -1,0 +1,91 @@
+<div class="container">
+  <h1 class="todo-title">✅ ToDo List</h1>
+
+  <!-- İstatistikler -->
+  <div class="stats">
+    <span>📊 Toplam: {{ totalCount }}</span>
+    <span>✅ Tamamlanan: {{ completedCount }}</span>
+    <span>⏳ Aktif: {{ activeCount }}</span>
+  </div>
+
+  <!-- Arama Çubuğu -->
+  <div class="search-bar">
+    <input type="text"
+           placeholder="🔍 Görevlerde ara..."
+           [(ngModel)]="searchTerm" />
+  </div>
+
+  <!-- Filtre Butonları -->
+  <div class="filter-buttons">
+    <button [class.active]="filterType === 'all'"
+            (click)="setFilter('all')">
+      Hepsi ({{ totalCount }})
+    </button>
+    <button [class.active]="filterType === 'active'"
+            (click)="setFilter('active')">
+      Aktif ({{ activeCount }})
+    </button>
+    <button [class.active]="filterType === 'completed'"
+            (click)="setFilter('completed')">
+      Tamamlanan ({{ completedCount }})
+    </button>
+  </div>
+
+  <!-- Yeni Görev -->
+  <div class="add-task">
+    <input type="text" placeholder="Başlık" [(ngModel)]="newItemTitle" />
+    <input type="text" placeholder="Açıklama" [(ngModel)]="newItemDescription" />
+    <button (click)="onItemAdd()">Ekle</button>
+  </div>
+
+  <!-- Görev Listesi -->
+  <ul class="task-list" *ngIf="filteredTodoItems.length > 0">
+    <li *ngFor="let item of filteredTodoItems; let i = index"
+        class="task-item"
+        draggable="true"
+        (dragstart)="onDragStart(todoItems.indexOf(item))"
+        (dragover)="onDragOver($event)"
+        (drop)="onDrop($event, todoItems.indexOf(item))"
+        (dragend)="onDragEnd()"
+        [class.dragging]="draggedIndex === todoItems.indexOf(item)">
+
+      <div class="drag-handle">☰</div>
+
+      <input type="checkbox"
+             [checked]="item.isCompleted"
+             (change)="toggleCompleted(item)" />
+
+      <div class="text-container" [class.completed]="item.isCompleted">
+        <strong>{{ item.title }}</strong>
+        <span class="description">{{ item.description }}</span>
+      </div>
+
+      <button (click)="openEditModal(item)">✏️ Düzenle</button>
+      <button (click)="onItemDelete(item)">❌</button>
+    </li>
+  </ul>
+
+  <!-- Sonuç Bulunamadı -->
+  <div class="no-results" *ngIf="filteredTodoItems.length === 0">
+    <p *ngIf="searchTerm">🔍 "{{ searchTerm }}" için sonuç bulunamadı</p>
+    <p *ngIf="!searchTerm && filterType === 'active'">🎉 Aktif görev yok!</p>
+    <p *ngIf="!searchTerm && filterType === 'completed'">📝 Henüz tamamlanan görev yok</p>
+    <p *ngIf="!searchTerm && filterType === 'all'">📝 Henüz görev eklenmedi</p>
+  </div>
+</div>
+
+<!-- Düzenleme -->
+<div class="modal" *ngIf="editingItem">
+  <div class="modal-content">
+    <h3>Düzenle</h3>
+    <input [(ngModel)]="editTitle" placeholder="Başlık" />
+    <input [(ngModel)]="editDescription" placeholder="Açıklama" />
+    <div class="modal-buttons">
+      <button (click)="saveEditModal()">Kaydet</button>
+      <button (click)="closeEditModal()">İptal</button>
+    </div>
+  </div>
+</div>
+
+<!-- Toast -->
+<div class="toast" *ngIf="showToast">{{ toastMessage }}</div>

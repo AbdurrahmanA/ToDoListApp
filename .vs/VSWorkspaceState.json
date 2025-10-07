@@ -1,9 +1,14 @@
 {
   "ExpandedNodes": [
     "",
-    "\\angularwithasp.client",
-    "\\AngularWithASP.Server",
-    "\\AngularWithASP.Server\\Controllers"
+    "\\ToDoApp.client",
+    "\\ToDoApp.client\\src",
+    "\\ToDoApp.client\\src\\app",
+    "\\ToDoApp.client\\src\\app\\todo-list",
+    "\\ToDoApp.Server",
+    "\\ToDoApp.Server\\API",
+    "\\ToDoApp.Server\\Application",
+    "\\ToDoApp.Server\\Properties"
   ],
   "PreviewInSolutionExplorer": false
 }
