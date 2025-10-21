@@ -1,0 +1,34 @@
+<div class="calendar-container">
+    <div class="calendar-header">
+        <button class="back-button" routerLink="/tasks">
+            <i class="fas fa-arrow-left"></i> Görev Listesine Dön
+        </button>
+        <div class="view-switch">
+            <button class="btn" (click)="setView(CalendarView.Month)" [class.active]="view === CalendarView.Month">Ay</button>
+            <button class="btn" (click)="setView(CalendarView.Week)" [class.active]="view === CalendarView.Week">Hafta</button>
+            <button class="btn" (click)="setView(CalendarView.Day)" [class.active]="view === CalendarView.Day">Gün</button>
+        </div>
+        <h2>{{ viewDate | date:'MMMM y' }}</h2>
+    </div>
+
+    <div [ngSwitch]="view">
+        <mwl-calendar-month-view 
+            *ngSwitchCase="'month'" 
+            [viewDate]="viewDate" 
+            [events]="events"
+            (dayClicked)="dayClicked($event.day)">
+        </mwl-calendar-month-view>
+
+        <mwl-calendar-week-view 
+            *ngSwitchCase="'week'" 
+            [viewDate]="viewDate" 
+            [events]="events">
+        </mwl-calendar-week-view>
+
+        <mwl-calendar-day-view 
+            *ngSwitchCase="'day'" 
+            [viewDate]="viewDate" 
+            [events]="events">
+        </mwl-calendar-day-view>
+    </div>
+</div>

@@ -7,7 +7,7 @@ import { TodoItem } from './todo-list/todo-item.model';
   providedIn: 'root'
 })
 export class TodoService {
-  private apiUrl = 'https://localhost:7261/api/ToDo'; 
+  private apiUrl = 'https://localhost:7261/api/ToDo';
 
   constructor(private http: HttpClient) { }
 
@@ -15,16 +15,31 @@ export class TodoService {
     return this.http.get<TodoItem[]>(this.apiUrl);
   }
 
-  create(title: string, description: string): Observable<TodoItem> {
-    const newItem = { title, description, isCompleted: false };
+  create(
+    title: string,
+    description: string,
+    isCompleted: boolean,
+    dueDate?: Date,
+    recurrenceRule?: string
+  ): Observable<TodoItem> {
+    const newItem = {
+      Title: title,
+      Description: description,
+      IsCompleted: isCompleted,
+      DueDate: dueDate || null,
+      RecurrenceRule: recurrenceRule || 'none'
+    };
+    console.log('API\'ye gönderilen veri:', newItem);
     return this.http.post<TodoItem>(this.apiUrl, newItem);
   }
 
   update(item: TodoItem): Observable<TodoItem> {
     const updateData = {
-      title: item.title,
-      description: item.description,
-      isCompleted: item.isCompleted
+      Title: item.title,
+      Description: item.description,
+      IsCompleted: item.isCompleted,
+      DueDate: item.dueDate,
+      RecurrenceRule: item.recurrenceRule
     };
     return this.http.put<TodoItem>(`${this.apiUrl}/${item.id}`, updateData);
   }
@@ -32,5 +47,4 @@ export class TodoService {
   delete(id: string): Observable<void> {
     return this.http.delete<void>(`${this.apiUrl}/${id}`);
   }
-
 }

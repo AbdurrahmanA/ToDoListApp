@@ -4,6 +4,8 @@ export class TodoItem {
     public title: string,
     public description: string = '',
     public isCompleted: boolean = false,
-    public createdAt: Date = new Date()
+    public createdAt: Date = new Date(),
+    public dueDate?: Date, 
+    public recurrenceRule?: 'none' | 'daily' | 'weekly' | 'monthly' 
   ) { }
 }

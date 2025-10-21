@@ -8,17 +8,20 @@
         {
             services.AddCors(options =>
             {
-                options.AddPolicy(name: MyAllowSpecificOrigins,
+                options.AddPolicy(
+                    name: MyAllowSpecificOrigins,
                     policy =>
                     {
-                        policy.WithOrigins(
-                            "http://localhost:4200",
-                            "https://localhost:4200",
-                            "https://localhost:50963"
-                        )
-                        .AllowAnyHeader()
-                        .AllowAnyMethod();
-                    });
+                        policy
+                            .WithOrigins(
+                                "http://localhost:4200",
+                                "https://localhost:4200",
+                                "https://localhost:50963"
+                            )
+                            .AllowAnyHeader()
+                            .AllowAnyMethod();
+                    }
+                );
             });
 
             return services;

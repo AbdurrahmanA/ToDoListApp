@@ -14,38 +14,58 @@ namespace ToDoApp.Server.Infrastructure.Repositories
             _context = context;
         }
 
-        public async Task Create(ToDo Todo)
+        public async Task Create(ToDo todo)
         {
-            await _context.ToDos.AddAsync(Todo);
+            await _context.ToDos.AddAsync(todo);
             await _context.SaveChangesAsync();
-
         }
 
-        public async Task Delete(Guid id)
+        // GÜNCELLENDİ: Artık sadece o kullanıcıya ait görevi arar.
+        public async Task<ToDo?> GetById(Guid id, string userId)
         {
-            var rmv = await _context.ToDos.FindAsync(id);
-
-             _context.ToDos.Remove(rmv);
-            await _context.SaveChangesAsync();
-
+            return await _context.ToDos
+                .FirstOrDefaultAsync(t => t.id == id && t.ApplicationUserId == userId);
         }
 
-        public async Task<List<ToDo>> GetAll()
+        public async Task<List<ToDo>> GetAll(string userId)
         {
-            return await _context.ToDos.ToListAsync();
-             
-        }
-
-        public async Task<ToDo> GetById(Guid id)
-        {
-            return await _context.ToDos.FindAsync(id);
+            return await _context.ToDos
+                .Where(t => t.ApplicationUserId == userId)
+                .ToListAsync();
         }
 
         public async Task Update(ToDo todo)
         {
-             _context.ToDos.Update(todo);
+            _context.ToDos.Update(todo);
             await _context.SaveChangesAsync();
+        }
 
+        // GÜNCELLENDİ: Önce görevin o kullanıcıya ait olup olmadığını kontrol eder, sonra siler.
+        public async Task<ToDo?> Delete(Guid id, string userId)
+        {
+            // Güvenli GetById metodumuzu kullanarak görevi buluyoruz.
+            var todoToDelete = await GetById(id, userId);
+
+            if (todoToDelete != null)
+            {
+                _context.ToDos.Remove(todoToDelete);
+                await _context.SaveChangesAsync();
+            }
+
+            return todoToDelete; // Silinen (veya null) görevi döndürür.
+        }
+
+        public async Task<IEnumerable<ToDo>> GetAllRecurringTaskSources()
+        {
+            return await _context.ToDos
+                .Where(t => t.RecurrenceRule != null && t.RecurrenceRule != "none")
+                .ToListAsync();
+        }
+
+        public async Task<bool> TaskExists(string title, DateTime dueDate)
+        {
+            return await _context.ToDos
+                .AnyAsync(t => t.Title == title && t.DueDate.HasValue && t.DueDate.Value.Date == dueDate.Date);
         }
     }
 }

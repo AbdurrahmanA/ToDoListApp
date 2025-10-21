@@ -1,38 +1,28 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
-VisualStudioVersion = 17.13.35818.85
+VisualStudioVersion = 17.0.31903.59
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "ToDoApp.client", "angularwithasp.client\ToDoApp.client.esproj", "{0B53EE48-D1F6-17D7-016E-B39CBC72E3E5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoApp.Server", "ToDoApp.Server\ToDoApp.Server.csproj", "{0734D8B0-F736-4780-9541-7710B47CDD53}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoApp.Server", "AngularWithASP.Server\ToDoApp.Server.csproj", "{287AE392-E7D9-45E0-9DE9-083CB89998EF}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Çözüm Öğeleri", "Çözüm Öğeleri", "{AC80F682-3D55-C8F8-4895-A4A9EDD49434}"
-	ProjectSection(SolutionItems) = preProject
-		README.md = README.md
-	EndProjectSection
+Project("{54a90642-561a-4bb1-a94e-469adee60c69}") = "ToDoApp.client", "ToDoApp.client\ToDoApp.client.esproj", "{DDCA1BA3-52E2-4BA3-ADD5-CD8591AB0FB0}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
-	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{0B53EE48-D1F6-17D7-016E-B39CBC72E3E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0B53EE48-D1F6-17D7-016E-B39CBC72E3E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0B53EE48-D1F6-17D7-016E-B39CBC72E3E5}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{0B53EE48-D1F6-17D7-016E-B39CBC72E3E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0B53EE48-D1F6-17D7-016E-B39CBC72E3E5}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0B53EE48-D1F6-17D7-016E-B39CBC72E3E5}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{287AE392-E7D9-45E0-9DE9-083CB89998EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{287AE392-E7D9-45E0-9DE9-083CB89998EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{287AE392-E7D9-45E0-9DE9-083CB89998EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{287AE392-E7D9-45E0-9DE9-083CB89998EF}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
-	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {AB97D12A-C989-4B5F-82C9-8B2BA670D751}
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0734D8B0-F736-4780-9541-7710B47CDD53}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0734D8B0-F736-4780-9541-7710B47CDD53}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0734D8B0-F736-4780-9541-7710B47CDD53}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0734D8B0-F736-4780-9541-7710B47CDD53}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DDCA1BA3-52E2-4BA3-ADD5-CD8591AB0FB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DDCA1BA3-52E2-4BA3-ADD5-CD8591AB0FB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DDCA1BA3-52E2-4BA3-ADD5-CD8591AB0FB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DDCA1BA3-52E2-4BA3-ADD5-CD8591AB0FB0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

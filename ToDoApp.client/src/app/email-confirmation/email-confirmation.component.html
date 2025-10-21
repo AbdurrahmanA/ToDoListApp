@@ -1,0 +1,13 @@
+<div class="confirmation-container">
+    <div class="confirmation-box">
+        <i *ngIf="isSuccess === true" class="fas fa-check-circle success-icon"></i>
+        <i *ngIf="isSuccess === false" class="fas fa-times-circle error-icon"></i>
+        <i *ngIf="isSuccess === null" class="fas fa-spinner fa-spin loading-icon"></i>
+        
+        <h2>{{ message }}</h2>
+
+        <a *ngIf="isSuccess !== null" routerLink="/tasks" class="login-button">
+            Görev Listesine Git
+        </a>
+    </div>
+</div>
