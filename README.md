@@ -1,49 +1,112 @@
 # ToDo List Uygulaması ( Angular + .NET Core )
 
+<div style="display: flex; flex-wrap: wrap; justify-content: space-around; margin-bottom: 15px;">
+  <img src="assets/screenshots/main-page.png" alt="Ana Görev Listesi Ekranı" style="width: 100%; margin-bottom: 10px;">
+  <img src="assets/screenshots/profile.png" alt="Kullanıcı Profili (Şifre Değiştirme)" style="width: 100%; margin-bottom: 10px;">
+  <img src="assets/screenshots/login.png" alt="Giriş Ekranı" style="width: 48%; margin-bottom: 50px;">
+  <img src="assets/screenshots/register.png" alt="Kayıt Ekranı" style="width: 48%; margin-bottom: 10px;">
+</div>
+
 Bu proje CQRS mimarisi kullanılarak geliştirilmiş bir ToDo projesidir.
 Frontend **Angular** ,Backend **Asp .NET Core Web API** ile oluşturulmuştur
 
+## 🚀 Temel Özellikler
+
+* **Güvenli Kimlik Doğrulama:** JWT (JSON Web Token) tabanlı kullanıcı kaydı ve girişi.
+* **Profil Yönetimi:** Kullanıcıların şifrelerini güvenli bir şekilde güncelleyebilmesi.
+* **Görev Yönetimi (CRUD):** Görev (To-Do) ekleme, listeleme, güncelleme ve silme.
+* **Asenkron Arka Plan Görevleri:** **Hangfire** ile e-posta gönderimi gibi işlemlerin arka planda (background job) yönetilmesi.
+* **Backend-Driven Validasyon:** Tüm doğrulama kuralları (.NET Data Annotations) sunucu tarafında tanımlanır ve Angular'a yerelleştirilmiş (Türkçe) hata mesajları olarak gönderilir.
+* **Güvenli Rotalar & Token Yönetimi:** Angular Route Guards ile yetkisiz erişim engellenir ve HTTP Interceptors ile her API isteğine JWT token'ı otomatik eklenir.
+
 ## Dosya Yapısı
+
+Proje, backend ve frontend olarak iki ana bölümden oluşur:
 
 ```bash
 AngularWithASP/
 │
-├─ AngularWithASP.Server/ # Backend (ASP.NET Core Web API)
-│ ├─ Controllers/
-│ ├─ Entity/
-│ ├─ Handlers/
-│ │ └─ CommandHandler/
-│ │ └─ QueryHandler/
-│ ├─ Repository/
-│ ├─ Properties/
-│ │ └─ launchSettings.json
-│ ├─ appsettings.json
-│ └─ Program.cs 
+├─ ToDoApp.Server/
+│ ├─ API/
+│ │ ├─ Controllers/
+│ │ ├─ Extensions/
+│ │ └─ Program.cs
+│ │
+│ ├─ Application/
+│ │ ├─ Commands/
+│ │ ├─ DTOs/
+│ │ ├─ Interfaces/
+│ │ └─ Queries/
+│ │
+│ ├─ Domain/
+│ │
+│ ├─ Infrastructure/
+│ │ ├─ Context/
+│ │ ├─ Localization/
+│ │ ├─ Migrations/
+│ │ ├─ Repositories/
+│ │ └─ Services/
+│ │
+
 │
-├─ angularwithasp.client/ # Frontend (Angular)
+├─ angularwithasp.client/
 │ ├─ src/
 │ │ ├─ app/
-│ │ │ ├─ todo-list/
-│ ├─ angular.json
+│ │ │ ├─ core/
+│ │ │ │ ├─ guards/
+│ │ │ │ └─ interceptors/
+│ │ │ ├─ features/
+│ │ │ │ ├─ auth/
+│ │ │ │ ├─ calendar/
+│ │ │ │ ├─ profile/
+│ │ │ │ └─ todo/
+│ │ │ ├─ shared/
+│ │ │ └─ app-routing-module.ts
 │
 ├─ README.md
 └─ .gitignore
 ```
+## 🗃️ Veritabanı Şeması
 
+Proje, **Entity Framework Core (Code-First)** yaklaşımıyla geliştirilmiştir. Veritabanı şeması, `Domain` katmanındaki varlıklara (entities) dayanır ve `Infrastructure/Migrations` klasöründeki migration'lar ile oluşturulur.
+
+### `ToDos` Tablosu
+Uygulamanın ana görev tablosudur.
+
+| Kolon Adı | Veri Tipi (MSSQL) | Açıklama |
+| :--- | :--- | :--- |
+| `Id` | `uniqueidentifier` (Guid) | Primary Key |
+| `Title` | `NVARCHAR(100)` | Görev başlığı (Zorunlu) |
+| `Description` | `NVARCHAR(500)` | Görev açıklaması (Opsiyonel) |
+| `IsCompleted` | `BIT` | Görevin tamamlanma durumu (Zorunlu) |
+| `CreatedAt` | `DATETIME2` | Görevin oluşturulma tarihi (Varsayılan: `GETDATE()`) |
+| `DueDate` | `DATETIME2` | Görevin son teslim tarihi (Opsiyonel) |
+| `RecurrenceRule` | `NVARCHAR(50)` | Tekrarlanma kuralı (daily, weekly, monthly) (Opsiyonel) |
+| `ApplicationUserId` | `uniqueidentifier` (Guid) | Görev sahibi kullanıcı (`AspNetUsers` tablosuna Foreign Key) |
+
+### `AspNetUsers` Tablosu
+Kullanıcı bilgileri (`Id`, `Email`, `UserName`, `PasswordHash` vb.), **.NET Identity**'nin standart tablolarında güvenli bir şekilde saklanır.
 
 ## Kullanılan Teknolojiler
 
 **Backend**
-  - ASP.NET Core 9.0
+  - ASP.NET Core 8.0
   - Entity Framework Core
   - MSSQL Server
   - Swagger
+  - MediatR
+  - Data Annotations
+  - Hangfire
+  - JWTs
 
 **Frontend**
-  - Angular 19
+  - Angular 17
   - Typescript
   - HTML + SCSS
   - RxJS
+  - Angular Reactive Forms
+  - Angular HTTPClient (Guards & Interceptors)
+
 
 ## Api Endpointleri
 
@@ -51,24 +114,21 @@ AngularWithASP/
 
 `https://localhost:7261/api/ToDo`
 
-  - Response :
+ Giriş yapmış kullanıcının tüm görevlerini listeler.
+ Response:
 
 ```bash
 
 [
   {
-    "id": "4ae59acd-8fc5-4c5a-a650-357c35f40077",
-    "title": "Angular",
-    "description": "Projenin taslağı hazır",
-    "isCompleted": true,
-    "createdAt": "2025-09-29T14:01:56.7627006"
-  },
-  {
-    "id": "385ef7db-3a76-4383-bbb5-7be2901daad1",
-    "title": "Proje",
-    "description": "Projenin backendini bitir",
+    "id": "73aeb7ff-0497-48f3-a50d-c7ff115fb8bb",
+    "title": "test",
+    "description": "test",
     "isCompleted": false,
-    "createdAt": "2025-09-29T16:24:51.8011358"
+    "createdAt": "2025-10-27T13:25:21.0716255",
+    "dueDate": "2025-10-28T00:00:00",
+    "recurrenceRule": "weekly",
+    "applicationUserId": "62fecc4a-80ac-4618-95ec-839f71b1fe49"
   }
 ]
 ```
@@ -78,97 +138,131 @@ AngularWithASP/
 
 `https://localhost:7261/api/ToDo`
 
-- Response :
-
+Yeni bir görev oluşturur. 
+Request Body:
 ```bash
 {
-  "id": "19317550-d35e-4d1e-9838-d30ac15a9df2",
-  "title": "Projeyi Github'a Yükle",
-  "description": "Proje Teslim",
-  "isCompleted": false,
-  "createdAt": "2025-10-01T10:41:19.7639152+03:00"
+  "description": "Test2",
+  "title": "Test2",
+  "dueDate": "2025-10-29",
+  "recurrenceRule": "daily",
+  "isCompleted": false
 }
 ```
-**GET /api/ToDo/{id}**
-
-`https://localhost:7261/api/ToDo/276eae14-8473-40e8-9340-8afee6a406c7`
-
-- Response :
-
+Response: (Oluşturulan görev döner)
 ```bash
 {
-  "id": "276eae14-8473-40e8-9340-8afee6a406c7",
-  "title": "Angular",
-  "description": "Projenin frontendini bitir",
+  "id": "16dea880-3ef8-449f-92ee-796911f8b8b3",
+  "title": "Test2",
+  "description": "Test2",
   "isCompleted": false,
-  "createdAt": "2025-09-29T14:07:13.1611192"
+  "createdAt": "2025-10-27T13:27:31.2250885",
+  "dueDate": "2025-10-29T00:00:00",
+  "recurrenceRule": "daily",
+  "applicationUserId": "62fecc4a-80ac-4618-95ec-839f71b1fe49"
+}
+```
+
+**GET /api/ToDo/{id}**
+
+`https://localhost:7261/api/ToDo/16dea880-3ef8-449f-92ee-796911f8b8b3`
+
+Belirtilen ID'ye sahip görevi getirir.
+Response:
+```bash
+{
+  "id": "16dea880-3ef8-449f-92ee-796911f8b8b3",
+  "title": "Test2",
+  "description": "Test2",
+  "isCompleted": false,
+  "createdAt": "2025-10-27T13:27:31.2250885",
+  "dueDate": "2025-10-29T00:00:00",
+  "recurrenceRule": "daily",
+  "applicationUserId": "62fecc4a-80ac-4618-95ec-839f71b1fe49",
+  "applicationUser": null
 }
 ```
 **DELETE /api/ToDo/{id}**
 
-`https://localhost:7261/api/ToDo/ecc7f2a2-47a9-4178-8f5d-812f49be6275`
+`https://localhost:7261/api/ToDo/16dea880-3ef8-449f-92ee-796911f8b8b3`
 
-- Response :
+Belirtilen ID'ye sahip görevi siler. Response: (Silinen görev döner)
 
 ```bash
+
 {
-  "id": "ecc7f2a2-47a9-4178-8f5d-812f49be6275",
-  "title": "test",
-  "description": "test",
-  "isCompleted": true,
-  "createdAt": "2025-09-30T14:48:22.2798793"
+  "id": "16dea880-3ef8-449f-92ee-796911f8b8b3",
+  "title": "Test2",
+  "description": "Test2",
+  "isCompleted": false,
+  "createdAt": "2025-10-27T13:27:31.2250885",
+  "dueDate": "2025-10-29T00:00:00",
+  "recurrenceRule": "daily",
+  "applicationUserId": "62fecc4a-80ac-4618-95ec-839f71b1fe49",
+  "applicationUser": null
 }
 ```
 
 **PUT /api/ToDo/{id}**
 
-`https://localhost:7261/api/ToDo/276eae14-8473-40e8-9340-8afee6a406c7`
+`https://localhost:7261/api/ToDo/73aeb7ff-0497-48f3-a50d-c7ff115fb8bb`
 
 
-- Response :
+Belirtilen ID'ye sahip görevi günceller.
+Request Body:
 ```bash
 {
-  "id": "276eae14-8473-40e8-9340-8afee6a406c7",
-  "title": "Proje teslim",
-  "description": "Teslimat listesini kontrol et",
+  "id": "73aeb7ff-0497-48f3-a50d-c7ff115fb8bb",
+  "title": "string",
+  "description": "string",
   "isCompleted": true,
-  "createdAt": "2025-09-29T14:07:13.1611192"
+  "createdAt": "2025-10-27T13:25:21.0716255",
+  "dueDate": "2025-10-27T10:32:45.949Z",
+  "recurrenceRule": "string",
+  "applicationUserId": "62fecc4a-80ac-4618-95ec-839f71b1fe49",
+  "applicationUser": null
 }
 ```
 ## Projeyi Çalıştırma ve Setup Adımları
 
 **Projeyi Çalıştırmak İçin Gerekli Önkoşullar**
 
-- .NET SDK 9.0 veya uyumlu sürüm
+- .NET SDK 8.0 veya uyumlu sürüm
 - SQL Server	
 - Node.js ve npm	
-- Angular CLI	
+- Angular CLI
+- smtp4dev
 
 **Backend kurulumu**
 1. Backend klasörüne gidin.
-- cd ../AngularWithASP/AngularWithASP.Server
+- ``` cd ../AngularWithASP/AngularWithASP.Server ```
 2. Gerekli .NET paketlerini yükleyin:
-- dotnet restore
+- ``` dotnet restore```
 3. Veribağlantısını ayarlamak için appsettings.json dosyasına kendi SQL server bilgilerinizi girin.
-- "ConnectionStrings": {
+-
+```bash
+"ConnectionStrings": {
   "DefaultConnection": "Server=YOUR_SERVER;Database=ToDoDb;Trusted_Connection=True;"
 }
+```
 4. Entity Framework Migrations ile veritabanını oluşturun.
-- dotnet tool install --global dotnet-ef
-- dotnet ef database update
+- ``` dotnet tool install --global dotnet-ef ```
+- ``` dotnet ef database update ```
 5. API'yı çalıştırın.
-- dotnet run
-6. Swagger ile endpoint'leri test edebilirsiniz. Visual Studio çalıştırma çıktısında belirtilen URL üzerinden Swagger’a erişin.
+- ``` dotnet run ``` 
+6. Tarayıcı üzerinden Swagger, Hangfire ve smtp4dev arayüzlerine erişin.
 
-- https://localhost:7261/swagger/index.html
-
+- **Swagger (API Test):** `https://localhost:7261/swagger`
+- **Hangfire Dashboard (Görev Takibi):** `https://localhost:7261/hangfire`
+- **smtp4dev (E-posta Gelen Kutusu):** `http://localhost:5000` (veya smtp4dev'in size verdiği port)
+  
 **Frontend kurulumu**
 1. Frontend klasörüne gidin.
-- cd ../AngularWithASP/angularwithasp.client
+- ``` cd ../AngularWithASP/angularwithasp.client ```
 2. Angular paketlerini yükle.
-- npm install
+- ``` npm install ```
 3. Angular uygulamasını başlat
-- ng serve --open
+- ``` ng serve --open ```
 
 
 
