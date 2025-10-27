@@ -7,8 +7,8 @@ namespace ToDoApp.Server.Domain
         [Key]
         public Guid id { get; set; } = Guid.NewGuid();
 
-        [Required]
-        [MaxLength(100)]
+        [Required(ErrorMessage = "Başlık alanı zorunludur.")]
+        [StringLength(100, ErrorMessage = "Başlık 100 karakterden uzun olamaz.")]
         public string Title { get; set; }
 
         [MaxLength(500)]

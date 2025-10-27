@@ -14,71 +14,70 @@ namespace ToDoApp.Server.Infrastructure.Services
 
         public async Task GenerateRecurringTasks()
         {
-            var today = DateTime.Today;
-            var allRecurringSources = await _toDoRepository.GetAllRecurringTaskSources();
+            var allRecurringTasks = await _toDoRepository.GetAllRecurringTaskSources();
 
-            // Görevleri başlıklarına ve tekrar kurallarına göre gruplayarak
-            // her bir tekrar zincirini ayrı ayrı ele alıyoruz.
-            var recurringChains = allRecurringSources.GroupBy(t => new
+            var tasksByUser = allRecurringTasks.GroupBy(t => t.ApplicationUserId);
+
+            foreach (var userTasks in tasksByUser)
             {
-                t.Title,
-                t.RecurrenceRule,
-            });
-
-            foreach (var chain in recurringChains)
-            {
-                // Her bir zincirdeki en son tarihli görevi buluyoruz.
-                var latestTask = chain.OrderByDescending(t => t.DueDate).First();
-
-                // Eğer zincirdeki son görev zaten bugün veya gelecek bir tarih içinse,
-                // bu zincirle ilgili bir şey yapmaya gerek yok.
-                if (latestTask.DueDate.HasValue && latestTask.DueDate.Value.Date >= today)
-                {
+                var userId = userTasks.Key;
+                if (string.IsNullOrEmpty(userId))
                     continue;
-                }
 
-                // Eğer en son görev geçmişte kaldıysa, o tarihten bugüne kadar olan
-                // tüm eksik görevleri oluşturmaya başlıyoruz.
-                var nextDueDate = latestTask.DueDate.HasValue
-                    ? latestTask.DueDate.Value.Date
-                    : today.AddDays(-1);
-
-                while (nextDueDate < today)
+                foreach (var sourceTask in userTasks)
                 {
-                    // Bir sonraki tekrar tarihini hesapla.
-                    nextDueDate = GetNextDueDate(nextDueDate, latestTask.RecurrenceRule);
-
-                    // Mükerrer görev oluşturmamak için bu tarihte bir görev var mı diye kontrol et.
-                    bool taskExists = await _toDoRepository.TaskExists(
-                        latestTask.Title,
-                        nextDueDate
-                    );
-                    if (!taskExists)
+                    if (
+                        sourceTask.DueDate == null
+                        || sourceTask.DueDate.Value.Date >= DateTime.Today
+                    )
                     {
-                        // Yeni görevi oluştur ve veritabanına kaydet.
-                        var newToDo = new ToDo
+                        continue;
+                    }
+
+                    DateTime nextDueDate = sourceTask.DueDate.Value;
+                    while (nextDueDate.Date < DateTime.Today)
+                    {
+                        if (sourceTask.RecurrenceRule == "daily")
                         {
-                            Title = latestTask.Title,
-                            Description = latestTask.Description,
+                            nextDueDate = nextDueDate.AddDays(1);
+                        }
+                        else if (sourceTask.RecurrenceRule == "weekly")
+                        {
+                            nextDueDate = nextDueDate.AddDays(7);
+                        }
+                        else if (sourceTask.RecurrenceRule == "monthly")
+                        {
+                            nextDueDate = nextDueDate.AddMonths(1);
+                        }
+                        else
+                        {
+                            break;
+                        }
+                    }
+
+                    bool taskAlreadyExists = await _toDoRepository.TaskExists(
+                        sourceTask.Title,
+                        nextDueDate,
+                        userId
+                    );
+
+                    if (!taskAlreadyExists)
+                    {
+                        var newRecurringTask = new ToDo
+                        {
+                            Title = sourceTask.Title,
+                            Description = sourceTask.Description,
                             IsCompleted = false,
+                            CreatedAt = DateTime.Now,
                             DueDate = nextDueDate,
-                            RecurrenceRule = latestTask.RecurrenceRule,
+                            RecurrenceRule = sourceTask.RecurrenceRule,
+                            ApplicationUserId = userId,
                         };
-                        await _toDoRepository.Create(newToDo);
+
+                        await _toDoRepository.Create(newRecurringTask);
                     }
                 }
             }
-        }
-
-        private DateTime GetNextDueDate(DateTime currentDate, string? recurrenceRule)
-        {
-            return recurrenceRule switch
-            {
-                "daily" => currentDate.AddDays(1),
-                "weekly" => currentDate.AddDays(7),
-                "monthly" => currentDate.AddMonths(1),
-                _ => currentDate.AddDays(999), // Tanımsız kuralda döngüden çıkmak için ileri bir tarih
-            };
         }
     }
 }

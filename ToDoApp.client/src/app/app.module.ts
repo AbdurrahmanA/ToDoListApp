@@ -1,54 +1,50 @@
-import { NgModule, LOCALE_ID } from '@angular/core'; // <-- 1. LOCALE_ID'yi import edin
+import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-// Component'ler
-import { TodoListComponent } from './todo-list/todo-list.component';
-import { CalendarViewComponent } from './calendar-view/calendar-view.component';
-import { EmailConfirmationComponent } from './email-confirmation/email-confirmation.component';
-import { LoginComponent } from './login/login.component';
-import { RegisterComponent } from './register/register.component';
-import { ResetPasswordComponent } from './reset-password/reset-password.component';
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { TodoListComponent } from '@app/features/todo/components/todo-list/todo-list.component';
+import { CalendarViewComponent } from '@app/features/calendar/components/calendar-view/calendar-view.component';
+import { EmailConfirmationComponent } from '@app/features/auth/components/email-confirmation/email-confirmation.component';
+import { LoginComponent } from '@app/features/auth/components/login/login.component';
+import { RegisterComponent } from '@app/features/auth/components/register/register.component';
+import { ResetPasswordComponent } from '@app/features/auth/components/reset-password/reset-password.component';
+import { ForgotPasswordComponent } from '@app/features/auth/components/forgot-password/forgot-password.component';
+import { MainLayoutComponent } from '@app/shared/components/main-layout/main-layout.component';
+import { ProfileComponent } from '@app/features/profile/components/profile/profile.component';
 
-// Servisler ve Kütüphaneler
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CalendarModule, DateAdapter } from 'angular-calendar';
 import { adapterFactory } from 'angular-calendar/date-adapters/date-fns';
-import { AuthInterceptor } from './auth.interceptor';
-
-// --- 2. TÜRKÇELEŞTİRME İÇİN BU BLOKU EKLEYİN ---
-import { registerLocaleData } from '@angular/common';
-import localeTr from '@angular/common/locales/tr';
-
-// Türkçe lokal verisini Angular'a tanıtın
-registerLocaleData(localeTr);
-// --- BİTİŞ ---
+import { AuthInterceptor } from '@app/core/interceptors/auth.interceptor';
+import { TodoItemComponent } from './features/todo/components/todo-item/todo-item.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule, 
+    HttpClientModule,
     FormsModule,
-    
-    // Standalone component'ler
-    TodoListComponent, 
+    TodoItemComponent,
+    TodoListComponent,
     CalendarViewComponent,
     EmailConfirmationComponent,
     LoginComponent,
     RegisterComponent,
+    TodoItemComponent,
     ResetPasswordComponent,
     ForgotPasswordComponent,
+    MainLayoutComponent,
+    ProfileComponent,
 
     BrowserAnimationsModule,
-    CalendarModule.forRoot({ 
+    CalendarModule.forRoot({
       provide: DateAdapter,
       useFactory: adapterFactory,
     })
@@ -58,11 +54,7 @@ registerLocaleData(localeTr);
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
       multi: true
-    },
-    // --- 3. TÜRKÇELEŞTİRME İÇİN BU PROVIDER'I EKLEYİN ---
-    // Uygulamanın varsayılan dilini 'tr-TR' (Türkçe) olarak ayarlar
-    { provide: LOCALE_ID, useValue: 'tr-TR' }
-    // --- BİTİŞ ---
+    }
   ],
   bootstrap: [AppComponent]
 })

@@ -1,4 +1,6 @@
+using System.Security.Claims;
 using System.Text;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.WebUtilities;
@@ -36,6 +38,18 @@ namespace ToDoApp.Server.API.Controllers
         [HttpPost("register")]
         public async Task<IActionResult> Register(RegisterDto registerDto)
         {
+            var existingEmail = await _userManager.FindByEmailAsync(registerDto.Email);
+            if (existingEmail != null)
+            {
+                return BadRequest(new[] { new { message = "Bu e-posta adresi zaten kullanılıyor." } });
+            }
+
+            var existingUsername = await _userManager.FindByNameAsync(registerDto.Username);
+            if (existingUsername != null)
+            {
+                return BadRequest(new[] { new { message = "Bu kullanıcı adı zaten kullanılıyor." } });
+            }
+
             var user = new ApplicationUser
             {
                 UserName = registerDto.Username,
@@ -73,7 +87,6 @@ namespace ToDoApp.Server.API.Controllers
                 }
             );
         }
-
         [HttpPost("login")]
         public async Task<ActionResult<UserDto>> Login(LoginDto loginDto)
         {
@@ -141,8 +154,6 @@ namespace ToDoApp.Server.API.Controllers
             return BadRequest("E-posta doğrulanamadı.");
         }
 
-        // --- YENİ EKLENEN METOTLAR ---
-
         [HttpPost("forgot-password")]
         public async Task<IActionResult> ForgotPassword(ForgotPasswordDto forgotPasswordDto)
         {
@@ -183,7 +194,34 @@ namespace ToDoApp.Server.API.Controllers
             var user = await _userManager.FindByEmailAsync(resetPasswordDto.Email);
             if (user == null)
             {
-                return BadRequest("Şifre sıfırlanamadı. Lütfen tekrar deneyin.");
+                return BadRequest(
+                    new[]
+                    {
+                        new
+                        {
+                            code = "InvalidRequest",
+                            description = "Şifre sıfırlanamadı. Lütfen tekrar deneyin.",
+                        },
+                    }
+                );
+            }
+
+            var isSamePassword = await _userManager.CheckPasswordAsync(
+                user,
+                resetPasswordDto.NewPassword
+            );
+            if (isSamePassword)
+            {
+                return BadRequest(
+                    new[]
+                    {
+                        new
+                        {
+                            code = "SameAsOldPassword",
+                            description = "Yeni şifre, mevcut şifrenizle aynı olamaz.",
+                        },
+                    }
+                );
             }
 
             try
@@ -206,8 +244,69 @@ namespace ToDoApp.Server.API.Controllers
             }
             catch (Exception)
             {
-                return BadRequest("Geçersiz token formatı.");
+                return BadRequest(
+                    new[] { new { code = "InvalidToken", description = "Geçersiz token formatı." } }
+                );
             }
+        }
+
+        [Authorize]
+        [HttpGet("profile")]
+        public async Task<ActionResult<UserProfileDto>> GetUserProfile()
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrEmpty(userId))
+                return Unauthorized();
+
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+                return NotFound("Kullanıcı bulunamadı.");
+
+            return new UserProfileDto { Username = user.UserName!, Email = user.Email! };
+        }
+
+        [Authorize]
+        [HttpPost("change-password")]
+        public async Task<IActionResult> ChangePassword(ChangePasswordDto changePasswordDto)
+        {
+            var userId = User.FindFirstValue(ClaimTypes.NameIdentifier);
+            if (string.IsNullOrEmpty(userId))
+            {
+                return Unauthorized();
+            }
+
+            var user = await _userManager.FindByIdAsync(userId);
+            if (user == null)
+            {
+                return NotFound("Kullanıcı bulunamadı.");
+            }
+
+            if (changePasswordDto.CurrentPassword == changePasswordDto.NewPassword)
+            {
+                return BadRequest(
+                    new[]
+                    {
+                        new
+                        {
+                            code = "SameAsOldPassword",
+                            description = "Yeni şifre, mevcut şifrenizle aynı olamaz.",
+                        },
+                    }
+                );
+            }
+
+            var result = await _userManager.ChangePasswordAsync(
+                user,
+                changePasswordDto.CurrentPassword,
+                changePasswordDto.NewPassword
+            );
+
+            if (!result.Succeeded)
+            {
+                return BadRequest(result.Errors);
+            }
+
+            return Ok(new { Message = "Şifreniz başarıyla güncellendi." });
         }
     }
 }

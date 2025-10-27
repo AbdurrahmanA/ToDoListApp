@@ -20,21 +20,17 @@ namespace ToDoApp.Server.Infrastructure.Services
 
         public string CreateToken(ApplicationUser user, IList<string> roles)
         {
-            // --- DEĞİŞİKLİK BURADA ---
-            // Token'ın içine yazılacak bilgileri (claims) oluşturuyoruz.
-            // ClaimTypes.NameIdentifier kullandığımızdan emin oluyoruz.
             var claims = new List<Claim>
             {
                 new Claim(ClaimTypes.NameIdentifier, user.Id),
                 new Claim(ClaimTypes.Email, user.Email!),
-                new Claim(ClaimTypes.Name, user.UserName!)
+                new Claim(ClaimTypes.Name, user.UserName!),
             };
 
             foreach (var role in roles)
             {
                 claims.Add(new Claim(ClaimTypes.Role, role));
             }
-            // --- BİTİŞ ---
 
             var creds = new SigningCredentials(_key, SecurityAlgorithms.HmacSha512Signature);
 
@@ -44,7 +40,7 @@ namespace ToDoApp.Server.Infrastructure.Services
                 Expires = DateTime.Now.AddDays(7),
                 SigningCredentials = creds,
                 Issuer = _config["Jwt:Issuer"],
-                Audience = _config["Jwt:Audience"]
+                Audience = _config["Jwt:Audience"],
             };
 
             var tokenHandler = new JwtSecurityTokenHandler();

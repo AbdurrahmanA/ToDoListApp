@@ -1,0 +1,288 @@
+@use 'sass:color';
+
+$primary-color: #3498DB;
+$primary-dark: #2980B9;
+$accent-color: #F39C12;
+$danger-color: #E74C3C;
+$text-dark: #2C3E50;
+$text-light: #95A5A6;
+$bg-color: #F9FAFB;
+$card-bg: #FFFFFF;
+
+.todo-app-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+
+    .section-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #EAECEE;
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+
+        .section-title {
+            margin: 0;
+            border: none;
+            padding: 0;
+        }
+
+        .refresh-btn {
+            background: none;
+            border: none;
+            font-size: 1.2rem;
+            color: $text-light;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 50%;
+            &:hover {
+                color: $text-dark;
+                background-color: #e9ecef;
+            }
+        }
+    }
+
+    .expandable-create-form {
+        background: $card-bg;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 30px;
+        overflow: hidden;
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        
+        .create-post-trigger {
+            padding: 15px;
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            border: 2px solid transparent;
+            span {
+                flex-grow: 1;
+                text-align: left;
+                color: $text-light;
+                font-size: 1rem;
+                padding-left: 15px;
+            }
+            i {
+                font-size: 1.5rem;
+                color: $primary-color;
+            }
+            &:hover {
+                background: #F0F2F5;
+                border-color: $primary-color;
+            }
+        }
+
+    }
+    
+    .filter-buttons-center {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-bottom: 20px;
+
+        button {
+            padding: 8px 15px;
+            background: $card-bg;
+            border: 1px solid #EAECEE;
+            color: $text-dark;
+            &:hover { border-color: $primary-color; }
+            &.active {
+                background: $primary-color;
+                color: $card-bg;
+                border-color: $primary-color;
+                font-weight: 600;
+            }
+        }
+    }
+
+    .task-list {
+        padding: 0;
+        margin: 0;
+        list-style: none;
+
+        .task-item-wrapper {
+            display: block;
+            margin-bottom: 15px;
+            &.dragging {
+                opacity: 0.5;
+            }
+        }
+    }
+
+    .no-results {
+        background: $card-bg;
+        padding: 40px 20px;
+        border-radius: 12px;
+        text-align: center;
+        margin-top: 20px;
+    }
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    animation: fadeIn 0.3s ease-out;
+
+    .modal-content {
+        background: $card-bg;
+        padding: 30px;
+        border-radius: 16px;
+        width: 90%;
+        max-width: 450px;
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        animation: scaleIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #EAECEE;
+
+            h3 {
+                margin: 0;
+                font-size: 1.6rem;
+                color: $text-dark;
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            .close-btn {
+                background: none;
+                border: none;
+                font-size: 1.5rem;
+                color: $text-light;
+                cursor: pointer;
+                padding: 0;
+                line-height: 1;
+                &:hover {
+                    color: $text-dark;
+                }
+            }
+        }
+        
+        > h3 {
+            display: none;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            width: 100%;
+            label {
+                font-size: 0.8rem;
+                font-weight: 600;
+                color: $text-light;
+                margin-left: 5px;
+            }
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            box-sizing: border-box;
+            margin: 0;
+            &:focus {
+                border-color: $primary-color;
+                outline: none;
+                box-shadow: 0 0 0 3px rgba($primary-color, 0.2);
+            }
+        }
+
+        textarea {
+            font-family: inherit;
+            resize: vertical;
+            min-height: 80px;
+        }
+
+        select {
+            background-color: white;
+        }
+        
+        .form-checkbox-row { 
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 15px;
+            color: $text-dark;
+            input[type="checkbox"] {
+                width: auto;
+                transform: scale(1.1);
+            }
+        }
+
+        .form-row { 
+            display: flex;
+            gap: 15px;
+            margin-bottom: 0;
+        }
+
+        .modal-buttons {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 25px;
+
+            .save-btn {
+                background: $primary-color;
+                color: $card-bg;
+                font-weight: 600;
+                &:hover {
+                    background: $primary-dark;
+                }
+            }
+
+            .cancel-btn {
+                background: #EAECEE;
+                color: $text-dark;
+                font-weight: 500;
+                &:hover {
+                    background: #DCDFE4;
+                }
+            }
+            
+            button {
+                padding: 10px 20px;
+                min-width: 100px;
+            }
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideDown {
+    from { transform: translateY(-10px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}

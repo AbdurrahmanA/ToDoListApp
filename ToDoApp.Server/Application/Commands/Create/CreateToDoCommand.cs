@@ -1,11 +1,12 @@
-﻿using MediatR;
+﻿using System.ComponentModel.DataAnnotations;
+using MediatR;
 using ToDoApp.Server.Domain;
 
 namespace ToDoApp.Server.Application.CommandHandler.Create
 {
     public record CreateToDoCommand(
         string? Description,
-        string Title,
+        [Required] [MaxLength(100)] string Title,
         DateTime? DueDate,
         string? RecurrenceRule,
         bool IsCompleted

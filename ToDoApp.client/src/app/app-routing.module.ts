@@ -1,29 +1,39 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TodoListComponent } from './todo-list/todo-list.component';
-import { CalendarViewComponent } from './calendar-view/calendar-view.component';
-import { EmailConfirmationComponent } from './email-confirmation/email-confirmation.component';
-import { LoginComponent } from './login/login.component'; // EKLENDİ
-import { RegisterComponent } from './register/register.component'; // EKLENDİ
-import { ResetPasswordComponent } from './reset-password/reset-password.component'; // EKLENDİ
-import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
-import { AuthGuard } from './auth.guard'; 
+import { AuthGuard } from './core/guards/auth.guard';
+import { MainLayoutComponent } from './shared/components/main-layout/main-layout.component';
+import { TodoListComponent } from './features/todo/components/todo-list/todo-list.component';
+import { CalendarViewComponent } from './features/calendar/components/calendar-view/calendar-view.component';
+import { ProfileComponent } from './features/profile/components/profile/profile.component';
+import { LoginComponent } from './features/auth/components/login/login.component';
+import { RegisterComponent } from './features/auth/components/register/register.component';
+import { EmailConfirmationComponent } from './features/auth/components/email-confirmation/email-confirmation.component';
+import { ForgotPasswordComponent } from './features/auth/components/forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './features/auth/components/reset-password/reset-password.component';
 
 const routes: Routes = [
-  // GÜNCELLENDİ: Ana sayfa artık login'e yönlendiriyor
-  { path: '', redirectTo: '/login', pathMatch: 'full' }, 
-  
-  // GÜNCELLENDİ: Bu rotalar artık AuthGuard tarafından korunuyor
-  { path: 'tasks', component: TodoListComponent, canActivate: [AuthGuard] },
-  { path: 'calendar', component: CalendarViewComponent, canActivate: [AuthGuard] },
-  
-  // Herkesin erişebileceği rotalar
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'confirm-email', component: EmailConfirmationComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
-  { path: 'reset-password', component: ResetPasswordComponent }
+  { path: 'reset-password', component: ResetPasswordComponent },
+
+  { 
+    path: '', 
+    component: MainLayoutComponent, 
+    canActivate: [AuthGuard],
+    children: [
+      { path: '', redirectTo: 'tasks/all', pathMatch: 'full' },
+      { path: 'tasks', redirectTo: 'tasks/all', pathMatch: 'full' },
+      { path: 'tasks/:filter', component: TodoListComponent }, 
+      { path: 'calendar', component: CalendarViewComponent },
+      { path: 'profile', component: ProfileComponent }
+    ]
+  },
+
+  { path: '**', redirectTo: '' }
 ];
+
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

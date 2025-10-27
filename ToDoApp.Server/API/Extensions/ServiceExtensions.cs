@@ -52,7 +52,6 @@ namespace ToDoApp.Server.API.Extensions
             services.AddScoped<IToDoRepository, ToDoRepository>();
             services.AddScoped<IEmailService, EmailService>();
 
-
             services.AddDbContext<ToDoContext>(options =>
                 options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"))
             );

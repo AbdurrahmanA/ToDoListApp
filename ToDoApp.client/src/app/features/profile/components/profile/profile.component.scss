@@ -1,0 +1,60 @@
+.profile-container {
+    width: 100%;
+    padding: 0 30px; 
+    margin: 0;
+}
+
+.section-title {
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #EAECEE;
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #2C3E50;
+}
+
+.auth-box {
+    width: 100%;
+    max-width: 550px;     
+    margin: 0 auto 30px auto;
+    text-align: left;
+    padding: 25px;          
+    border: 1px solid #eaecee;
+    border-radius: 12px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.auth-box h2 {
+    font-size: 1.4em;       
+    margin-top: 0;
+    margin-bottom: 25px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.form-group {
+    margin-bottom: 15px;   
+}
+
+.form-group label {
+    font-size: 0.85rem;
+    margin-bottom: 6px;
+}
+
+.form-group input {
+    padding: 10px 12px;  
+    font-size: 0.95em;
+}
+
+.form-group input[disabled] {
+    background-color: #f8f9fa;
+    color: #777;
+    cursor: not-allowed;
+}
+
+.success-message, .error-message {
+    margin-top: 20px;
+    padding: 12px;
+    font-size: 0.9em;
+}

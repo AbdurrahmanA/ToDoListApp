@@ -1,0 +1,36 @@
+<div class="task-item-content"
+     [class.completed]="task.isCompleted"
+     [class.overdue]="isOverdue(task)">
+
+    <div class="drag-handle"><i class="fas fa-grip-lines"></i></div>
+
+    <div class="recurrence-icon-container" [title]="getRecurrenceTitle(task.recurrenceRule)">
+        <i *ngIf="task.recurrenceRule === 'daily'" class="fas fa-sun"></i>
+        <i *ngIf="task.recurrenceRule === 'weekly'" class="fas fa-calendar-week"></i>
+        <i *ngIf="task.recurrenceRule === 'monthly'" class="fas fa-moon"></i>
+    </div>
+
+    <input type="checkbox" [checked]="task.isCompleted" (change)="toggleCompleteClicked()" />
+
+    <div class="text-container">
+        <strong>{{ task.title }}</strong>
+        <span class="description">{{ task.description }}</span>
+    </div>
+
+    <div class="due-date-container" *ngIf="task.dueDate">
+        <i class="fas" 
+           [class.fa-check]="task.isCompleted" 
+           [class.fa-exclamation-triangle]="isOverdue(task) && !task.isCompleted" 
+           [class.fa-clock]="!isOverdue(task) && !task.isCompleted"></i>
+        <span>{{ task.dueDate | date: 'dd MMM' }}</span>
+    </div>
+    
+    <div class="action-buttons">
+        <button (click)="openEditClicked()" class="edit-btn" title="Düzenle">
+            <i class="fas fa-pencil-alt"></i>
+        </button>
+        <button (click)="deleteClicked()" class="delete-btn" title="Sil">
+            <i class="fas fa-trash-alt"></i>
+        </button>
+    </div>
+</div>

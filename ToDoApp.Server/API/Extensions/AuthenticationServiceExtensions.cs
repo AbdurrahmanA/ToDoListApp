@@ -2,7 +2,7 @@ using System.Text;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using ToDoApp.Server.Application.Interfaces;
-using ToDoApp.Server.Infrastructure.Services; // Bu using ifadesi önemli
+using ToDoApp.Server.Infrastructure.Services;
 
 namespace ToDoApp.Server.API.Extensions
 {
@@ -13,7 +13,6 @@ namespace ToDoApp.Server.API.Extensions
             IConfiguration config
         )
         {
-           
             services.AddScoped<ITokenService, TokenService>();
 
             services

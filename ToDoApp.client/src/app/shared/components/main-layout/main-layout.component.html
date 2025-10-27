@@ -1,0 +1,97 @@
+<header class="app-header">
+    <div class="header-content">
+        <div class="logo" routerLink="/tasks/all">
+            <i class="fas fa-tasks"></i>
+            <span>ToDoApp</span>
+        </div>
+        <div class="header-search-bar">
+            <input type="text" placeholder="Görevlerde Ara..." [(ngModel)]="searchTerm"
+                (ngModelChange)="onSearchChange()" />
+        </div>
+        <nav class="header-nav">
+            <button *ngIf="router.url.includes('/tasks')" class="nav-btn" title="Yeni Görev Ekle" (click)="toggleCreateForm()">
+                <i class="fas fa-plus-square"></i>
+            </button>
+            <div class="notification-wrapper">
+                <button class="nav-btn" title="Bildirimler" (click)="toggleNotificationPanel($event)">
+                    <i class="fas fa-bell"></i>
+                    <span *ngIf="todayTaskCount > 0" class="notification-badge">
+                        {{ todayTaskCount }}
+                    </span>
+                </button>
+                <div class="notification-panel" *ngIf="isNotificationPanelOpen" (click)="$event.stopPropagation()">
+                    <div class="panel-header">
+                        <strong>Bugün Yapılacaklar ({{ todayTaskCount }})</strong>
+                    </div>
+                    <ul class="notification-list">
+                        <li *ngFor="let task of todayTasks" class="notification-item">
+                            <span>{{ task.title }}</span>
+                        </li>
+                        <li *ngIf="todayTaskCount === 0" class="notification-item empty">
+                            Bugün için planlanmış bir görev yok.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <button class="nav-btn" title="Çıkış Yap" (click)="logout()">
+                <i class="fas fa-sign-out-alt"></i>
+            </button>
+        </nav>
+    </div>
+</header>
+
+<main class="app-main-content">
+    <div class="info-sidebar">
+        <div class="sidebar-item" routerLink="/profile" routerLinkActive="active">
+            <i class="fas fa-user"></i> Kullanıcı Profili
+        </div>
+        <div class="sidebar-item" routerLink="/tasks/all" routerLinkActive="active">
+            <i class="fas fa-list-check"></i> Tüm Görevler
+        </div>
+        <hr>
+        <div class="sidebar-item" routerLink="/tasks/today" routerLinkActive="active">
+            <i class="fas fa-calendar-day"></i> Bugün
+        </div>
+        <div class="sidebar-item" routerLink="/tasks/upcoming" routerLinkActive="active">
+            <i class="fas fa-calendar-alt"></i> Yaklaşanlar
+        </div>
+        <hr>
+        <div class="sidebar-item" routerLink="/tasks/daily" routerLinkActive="active">
+            <i class="fas fa-sun"></i> Günlük Görevler
+        </div>
+        <div class="sidebar-item" routerLink="/tasks/weekly" routerLinkActive="active">
+            <i class="fas fa-calendar-week"></i> Haftalık Görevler
+        </div>
+        <div class="sidebar-item" routerLink="/tasks/monthly" routerLinkActive="active">
+            <i class="fas fa-moon"></i> Aylık Görevler
+        </div>
+        <hr>
+        <div class="stats sidebar-stats">
+            <div class="stat-card completed-stat">
+                <i class="fas fa-check-circle"></i>
+                <span>Tamamlanan:</span>
+                <strong>{{ completedCount }}</strong>
+            </div>
+            <div class="stat-card active-stat">
+                <i class="fas fa-hourglass-half"></i>
+                <span>Aktif:</span>
+                <strong>{{ activeCount }}</strong>
+            </div>
+            <div class="stat-card total-stat">
+                <i class="fas fa-list-ul"></i>
+                <span>Toplam:</span>
+                <strong>{{ totalCount }}</strong>
+            </div>
+        </div>
+        <hr>
+        <div class="sidebar-item" routerLink="/calendar" routerLinkActive="active">
+            <i class="fas fa-calendar-alt"></i> Takvim Görünümü
+        </div>
+    </div>
+
+    <div class="main-content-area">
+        <router-outlet></router-outlet>
+    </div>
+</main>
+
+<div class="toast" *ngIf="showToast">{{ toastMessage }}</div>

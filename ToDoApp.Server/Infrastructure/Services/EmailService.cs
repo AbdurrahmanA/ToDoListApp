@@ -1,7 +1,7 @@
 using MailKit.Net.Smtp;
 using Microsoft.Extensions.Configuration;
 using MimeKit;
-using ToDoApp.Server.Application.Interfaces; // EKLENDİ
+using ToDoApp.Server.Application.Interfaces;
 
 namespace ToDoApp.Server.Infrastructure.Services
 {
@@ -19,20 +19,19 @@ namespace ToDoApp.Server.Infrastructure.Services
             var emailSettings = _config.GetSection("EmailSettings");
             var email = new MimeMessage();
 
-            email.From.Add(new MailboxAddress(emailSettings["SenderName"], emailSettings["SenderEmail"]));
+            email.From.Add(
+                new MailboxAddress(emailSettings["SenderName"], emailSettings["SenderEmail"])
+            );
             email.To.Add(new MailboxAddress(toEmail, toEmail));
             email.Subject = subject;
             email.Body = new TextPart(MimeKit.Text.TextFormat.Html) { Text = body };
 
             using var smtp = new SmtpClient();
             await smtp.ConnectAsync(
-                emailSettings["SmtpServer"], // <-- YAZIM HATASI DÜZELTİLDİ
+                emailSettings["SmtpServer"],
                 int.Parse(emailSettings["Port"]!),
                 false
             );
-
-            // Gerçek bir sunucuya bağlanırken kimlik doğrulama gerekebilir:
-            // await smtp.AuthenticateAsync(emailSettings["Username"], emailSettings["Password"]);
 
             await smtp.SendAsync(email);
             await smtp.DisconnectAsync(true);

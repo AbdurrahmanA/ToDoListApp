@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Identity;
 using ToDoApp.Server.Domain;
 using ToDoApp.Server.Infrastructure.Context;
+using ToDoApp.Server.Infrastructure.Localization; // YENİ USING
 
 namespace ToDoApp.Server.API.Extensions
 {
@@ -11,8 +12,8 @@ namespace ToDoApp.Server.API.Extensions
             services
                 .AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ToDoContext>()
-                .AddDefaultTokenProviders();
-
+                .AddDefaultTokenProviders()
+                .AddErrorDescriber<TurkishIdentityErrorDescriber>();
             return services;
         }
     }

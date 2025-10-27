@@ -1,0 +1,124 @@
+<div class="todo-app-container">
+    <div class="section-header">
+        <h1 class="section-title">{{ sectionTitle }}</h1>
+        <button (click)="loadItems()" class="refresh-btn" title="Listeyi Yenile">
+            <i class="fas fa-sync-alt"></i>
+        </button>
+    </div>
+
+
+    <div class="expandable-create-form" [class.expanded]="false">
+        <div class="create-post-trigger" (click)="toggleCreateForm()">
+            <i class="fas fa-plus-circle"></i>
+            <span>Yeni Görev Ekle...</span>
+        </div>
+    </div>
+
+
+    <div class="filter-buttons-center">
+        <button [class.active]="filterType === 'all'" (click)="setFilter('all')">
+            <i class="fas fa-list-ul"></i> Hepsi
+        </button>
+        <button [class.active]="filterType === 'active'" (click)="setFilter('active')">
+            <i class="fas fa-hourglass-half"></i> Aktif
+        </button>
+        <button [class.active]="filterType === 'completed'" (click)="setFilter('completed')">
+            <i class="fas fa-check-circle"></i> Tamamlanan
+        </button>
+    </div>
+
+    <ul class="task-list" *ngIf="filteredTodoItems.length > 0">
+        <app-todo-item *ngFor="let item of filteredTodoItems" [task]="item" (onDelete)="onItemDelete($event)"
+            (onToggleComplete)="toggleCompleted($event)" (onOpenEdit)="openEditModal($event)" draggable="true"
+            (dragstart)="onDragStart(todoItems.indexOf(item))" (dragover)="onDragOver($event)"
+            (drop)="onDrop($event, todoItems.indexOf(item))" (dragend)="onDragEnd()" class="task-item-wrapper"
+            [class.dragging]="draggedIndex === todoItems.indexOf(item)">
+        </app-todo-item>
+    </ul>
+
+    <div class="no-results" *ngIf="filteredTodoItems.length === 0">
+        <p *ngIf="searchTerm">🔍 "{{ searchTerm }}" için sonuç bulunamadı</p>
+        <p *ngIf="!searchTerm && filterType === 'active'">🎉 Aktif görev yok!</p>
+        <p *ngIf="!searchTerm && filterType === 'completed'">📝 Henüz tamamlanan görev yok</p>
+        <p *ngIf="!searchTerm && filterType === 'all'">📝 Henüz görev eklenmedi</p>
+    </div>
+</div>
+
+<div class="modal create-modal" *ngIf="isCreatingNewItem" (click)="closeCreateForm()">
+    <div class="modal-content" (click)="$event.stopPropagation()">
+        <div class="modal-header">
+            <h3><i class="fas fa-edit"></i> Yeni Görev Yarat</h3>
+            <button class="close-btn" (click)="closeCreateForm()"><i class="fas fa-times"></i></button>
+        </div>
+
+        <div class="form-group">
+            <label for="newItemTitle">Başlık (Zorunlu)</label>
+            <input id="newItemTitle" type="text" [(ngModel)]="newItemTitle" class="form-input" />
+        </div>
+        <div class="form-group">
+            <label for="newItemDescription">Detaylı Açıklama (Opsiyonel)</label>
+            <textarea id="newItemDescription" [(ngModel)]="newItemDescription" class="form-textarea"></textarea>
+        </div>
+        <div class="form-row">
+            <div class="form-group">
+                <label for="newItemDueDate">Son Tarih</label>
+                <input id="newItemDueDate" type="date" [(ngModel)]="newItemDueDate" class="form-input" />
+            </div>
+            <div class="form-group">
+                <label for="newItemRecurrence">Tekrar Sıklığı</label>
+                <select id="newItemRecurrence" [(ngModel)]="newItemRecurrence" class="form-input">
+                    <option value="none">Tekrar Etme</option>
+                    <option value="daily">Günlük</option>
+                    <option value="weekly">Haftalık</option>
+                    <option value="monthly">Aylık</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-checkbox-row">
+            <input type="checkbox" [(ngModel)]="newItemIsCompleted" id="newItemCompletedCheckbox" />
+            <label for="newItemCompletedCheckbox">Tamamlanmış olarak ekle</label>
+        </div>
+        <div class="modal-buttons">
+            <button (click)="onItemAddAndClose()" class="save-btn">
+                <i class="fas fa-paper-plane"></i> Ekle
+            </button>
+            <button (click)="closeCreateForm()" class="cancel-btn">
+                İptal
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="modal edit-modal" *ngIf="editingItem">
+    <div class="modal-content">
+        <div class="modal-header"> 
+            <h3>Görevi Düzenle</h3>
+            <button class="close-btn" (click)="closeEditModal()"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="form-group">
+            <label for="editTitle">Başlık</label>
+            <input id="editTitle" [(ngModel)]="editTitle" />
+        </div>
+        <div class="form-group">
+            <label for="editDescription">Açıklama</label>
+            <textarea id="editDescription" [(ngModel)]="editDescription"></textarea>
+        </div>
+        <div class="form-group">
+            <label for="editDueDate">Son Tarih</label>
+            <input id="editDueDate" type="date" [(ngModel)]="editDueDate" />
+        </div>
+        <div class="form-group">
+            <label for="editRecurrence">Tekrar Sıklığı</label>
+            <select id="editRecurrence" [(ngModel)]="editRecurrence">
+                <option value="none">Tekrar Etme</option>
+                <option value="daily">Günlük</option>
+                <option value="weekly">Haftalık</option>
+                <option value="monthly">Aylık</option>
+            </select>
+        </div>
+        <div class="modal-buttons">
+            <button (click)="saveEditModal()" class="save-btn">Kaydet</button>
+            <button (click)="closeEditModal()" class="cancel-btn">İptal</button>
+        </div>
+    </div>
+</div>

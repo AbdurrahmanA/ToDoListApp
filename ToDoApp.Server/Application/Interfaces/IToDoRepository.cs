@@ -10,6 +10,7 @@ namespace ToDoApp.Server.Application.Interfaces
         Task Update(ToDo todo);
         Task<ToDo?> Delete(Guid id, string userId);
         Task<IEnumerable<ToDo>> GetAllRecurringTaskSources();
-        Task<bool> TaskExists(string title, DateTime dueDate);
+
+        Task<bool> TaskExists(string title, DateTime dueDate, string userId);
     }
 }

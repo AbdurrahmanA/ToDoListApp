@@ -1,23 +1,20 @@
-/* Genel HTML ve body ayarları */
 html, body {
     margin: 0;
     padding: 0;
     height: 100%;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f7f6; /* Açık gri bir arka plan */
+    background-color: #f4f7f6; 
     color: #333;
 }
 
-/* Auth Container: Sayfayı ortalar ve arka planı ayarlar */
 .auth-container {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: #f0f2f5; /* Hafif koyu bir arka plan */
+    background-color: #f0f2f5; 
 }
 
-/* Auth Box: Giriş/Kayıt formunun ana kutusu */
 .auth-box {
     background-color: #ffffff;
     padding: 40px;
@@ -26,17 +23,16 @@ html, body {
     width: 100%;
     max-width: 400px;
     text-align: center;
-    box-sizing: border-box; /* Padding'in genişliğe dahil olmasını sağlar */
+    box-sizing: border-box;
 }
 
 .auth-box h2 {
     margin-bottom: 30px;
-    color: #2c3e50; /* Koyu mavi başlık */
+    color: #2c3e50; 
     font-size: 2em;
     font-weight: 600;
 }
 
-/* Form grupları için stil */
 .form-group {
     margin-bottom: 20px;
     text-align: left;
@@ -55,21 +51,20 @@ html, body {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1em;
-    box-sizing: border-box; /* Padding'in genişliğe dahil olmasını sağlar */
+    box-sizing: border-box; 
     transition: border-color 0.3s ease;
 }
 
 .form-group input:focus {
-    border-color: #007bff; /* Mavi odaklama rengi */
+    border-color: #007bff; 
     outline: none;
     box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.25);
 }
 
-/* Ortak Buton stili */
 .auth-button {
     width: 100%;
     padding: 12px 15px;
-    background-color: #007bff; /* Mavi buton */
+    background-color: #007bff;
     color: white;
     border: none;
     border-radius: 5px;
@@ -80,7 +75,7 @@ html, body {
 }
 
 .auth-button:hover {
-    background-color: #0056b3; /* Koyu mavi hover */
+    background-color: #0056b3;
     transform: translateY(-1px);
 }
 
@@ -88,7 +83,6 @@ html, body {
     transform: translateY(0);
 }
 
-/* Linkler ve Yardımcı Metinler */
 .auth-links {
     margin-top: 25px;
     font-size: 0.9em;
@@ -106,9 +100,8 @@ html, body {
     text-decoration: underline;
 }
 
-/* Hata ve Başarı Mesajları */
 .error-message {
-    color: #dc3545; /* Kırmızı hata mesajı */
+    color: #dc3545;
     background-color: #f8d7da;
     border: 1px solid #f5c6cb;
     padding: 10px;
@@ -118,7 +111,7 @@ html, body {
 }
 
 .success-message {
-    color: #28a745; /* Yeşil başarı mesajı */
+    color: #28a745;
     background-color: #d4edda;
     border: 1px solid #c3e6cb;
     padding: 10px;
@@ -127,7 +120,6 @@ html, body {
     font-size: 0.9em;
 }
 
-/* Confirmation Page Specific Styles */
 .confirmation-container {
     display: flex;
     justify-content: center;
@@ -148,19 +140,19 @@ html, body {
 }
 
 .success-icon {
-    color: #28a745; /* Yeşil */
+    color: #28a745;
     font-size: 4em;
     margin-bottom: 20px;
 }
 
 .error-icon {
-    color: #dc3545; /* Kırmızı */
+    color: #dc3545; 
     font-size: 4em;
     margin-bottom: 20px;
 }
 
 .loading-icon {
-    color: #007bff; /* Mavi */
+    color: #007bff; 
     font-size: 4em;
     margin-bottom: 20px;
 }

@@ -1,0 +1,274 @@
+@use 'sass:color';
+
+$primary-color: #3498DB;
+$primary-dark: #2980B9;
+$accent-color: #F39C12;
+$danger-color: #E74C3C;
+$success-color: #27AE60;
+$text-dark: #2C3E50;
+$text-light: #95A5A6;
+$bg-color: #F9FAFB;
+$card-bg: #FFFFFF;
+$header-height: 55px;
+$app-max-width: 1300px; 
+
+.app-header {
+    background-color: $card-bg;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    height: $header-height;
+
+    .header-content {
+        max-width: $app-max-width;
+        margin: 0 auto;
+        height: 100%;
+        padding: 0 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            cursor: pointer;
+            span { margin-left: 8px; }
+            i { color: $primary-color; }
+        }
+
+        .header-search-bar {
+            flex-grow: 1;
+            max-width: 400px;
+            margin: 0 40px;
+            input {
+                width: 100%;
+                padding: 8px 15px;
+                border: 1px solid #EAECEE;
+                border-radius: 20px;
+                background: $bg-color;
+                &:focus {
+                    outline: none;
+                    background: $card-bg;
+                    border-color: $primary-color;
+                }
+            }
+        }
+
+        .nav-btn,
+        .profile-btn {
+            background: $bg-color;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            color: $text-dark;
+            font-size: 1.1rem;
+            margin-left: 10px;
+            position: relative;
+            &:hover {
+                background: #EAECEE;
+            }
+        }
+
+        .header-nav {
+            display: flex;
+            align-items: center;
+        }
+    }
+}
+
+
+.app-main-content {
+    display: flex;
+    justify-content: center;
+    max-width: $app-max-width;
+    margin: 0 auto;
+    padding: 20px 0;
+    width: 100%;
+
+    .info-sidebar {
+        width: 280px;
+        flex-shrink: 0; 
+        padding: 20px 20px 20px 0;
+        position: sticky;
+        top: $header-height + 20px;
+        align-self: flex-start;
+
+        @media (max-width: 992px) {
+            display: none;
+        }
+
+        .sidebar-item {
+            padding: 12px 10px;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            font-weight: 500;
+            color: $text-dark;
+            cursor: pointer;
+            i {
+                margin-right: 10px;
+                color: $primary-color;
+            }
+            &:hover {
+                background: #EAECEE;
+            }
+            &.active {
+                background-color: #EAECEE;
+                font-weight: 700;
+            }
+        }
+
+        hr {
+            border-color: #EAECEE;
+            margin: 15px 0;
+        }
+
+        .sidebar-stats {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            padding: 15px;
+            background: $card-bg;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+
+            .stat-card {
+                display: flex;
+                align-items: center;
+                span {
+                    flex: 1;
+                    text-align: left;
+                }
+                strong {
+                    font-size: 1.3rem;
+                    margin-left: auto;
+                }
+                i {
+                    font-size: 1.1rem;
+                    margin-right: 10px;
+                }
+                &.completed-stat {
+                    i, strong { color: $success-color; }
+                }
+                &.active-stat {
+                    i, strong { color: $accent-color; }
+                }
+                &.total-stat {
+                    i, strong { color: $primary-dark; }
+                }
+            }
+        }
+    }
+
+
+    .main-content-area {
+        flex-grow: 1; 
+        width: 100%;
+        min-width: 0; 
+    }
+}
+
+.notification-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.notification-badge {
+    position: absolute;
+    top: 4px;      
+    right: 4px;     
+    background-color: $danger-color;
+    color: white;
+    font-weight: 600;
+    font-size: 0.65rem; 
+    width: 14px;      
+    height: 14px;     
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid $card-bg;
+}
+
+.notification-panel {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 300px;
+    background: $card-bg;
+    border-radius: 8px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+    z-index: 1001;
+    border: 1px solid #eee;
+    overflow: hidden;
+    animation: fadeIn 0.2s ease-out;
+
+    .panel-header {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+        border-bottom: 1px solid #f0f0f0;
+        background: #fcfcfc;
+    }
+
+    .notification-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        max-height: 400px;
+        overflow-y: auto;
+    }
+
+    .notification-item {
+        padding: 12px 15px;
+        border-bottom: 1px solid #f0f0f0;
+        font-size: 0.85rem;
+        
+        &:last-child {
+            border-bottom: none;
+        }
+
+        &.empty {
+            color: $text-light;
+            text-align: center;
+        }
+
+        &:not(.empty):hover {
+            background: $bg-color;
+        }
+    }
+}
+
+.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: $primary-color;
+    color: white;
+    padding: 12px 18px;
+    border-radius: 6px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    z-index: 3000;
+    font-size: 0.95rem;
+    animation: slideIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(100px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
