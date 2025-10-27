@@ -172,9 +172,7 @@ export class TodoListComponent implements OnInit {
         this.uiStateService.notifyTaskListUpdated();
       },
       error: (err: any) => {
-        console.log('Hata detayı:', err);
-        console.log('Hata status:', err.status);
-        console.log('Hata body:', err.error);
+
 
         if (err.status === 400 && err.error?.errors) {
           let customErrorMessages: string[] = [];
