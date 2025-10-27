@@ -15,7 +15,7 @@ Frontend **Angular** ,Backend **Asp .NET Core Web API** ile oluşturulmuştur
 * **Güvenli Kimlik Doğrulama:** JWT (JSON Web Token) tabanlı kullanıcı kaydı ve girişi.
 * **Profil Yönetimi:** Kullanıcıların şifrelerini güvenli bir şekilde güncelleyebilmesi.
 * **Görev Yönetimi (CRUD):** Görev (To-Do) ekleme, listeleme, güncelleme ve silme.
-* **Asenkron Arka Plan Görevleri:** **Hangfire** ile e-posta gönderimi gibi işlemlerin arka planda (background job) yönetilmesi.
+* **Asenkron ve Tekrarlayan Görevler:** **Hangfire** ile zamanlanmış görevlerin arka planda güvenilir bir şekilde yönetilmesi.
 * **Backend-Driven Validasyon:** Tüm doğrulama kuralları (.NET Data Annotations) sunucu tarafında tanımlanır ve Angular'a yerelleştirilmiş (Türkçe) hata mesajları olarak gönderilir.
 * **Güvenli Rotalar & Token Yönetimi:** Angular Route Guards ile yetkisiz erişim engellenir ve HTTP Interceptors ile her API isteğine JWT token'ı otomatik eklenir.
 
