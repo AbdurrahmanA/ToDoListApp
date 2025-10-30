@@ -24,7 +24,7 @@ Frontend **Angular** ,Backend **Asp .NET Core Web API** ile oluşturulmuştur
 Proje, backend ve frontend olarak iki ana bölümden oluşur:
 
 ```bash
-AngularWithASP/
+ToDoApp/
 │
 ├─ ToDoApp.Server/
 │ ├─ API/
@@ -49,7 +49,7 @@ AngularWithASP/
 │ │
 
 │
-├─ angularwithasp.client/
+├─ ToDoApp.client/
 │ ├─ src/
 │ │ ├─ app/
 │ │ │ ├─ core/
@@ -235,7 +235,7 @@ Request Body:
 
 **Backend kurulumu**
 1. Backend klasörüne gidin.
-- ``` cd ../AngularWithASP/AngularWithASP.Server ```
+- ``` cd ../TodoApp/TodoApp.Server ```
 2. Gerekli .NET paketlerini yükleyin:
 - ``` dotnet restore```
 3. Veribağlantısını ayarlamak için appsettings.json dosyasına kendi SQL server bilgilerinizi girin.
@@ -258,7 +258,7 @@ Request Body:
   
 **Frontend kurulumu**
 1. Frontend klasörüne gidin.
-- ``` cd ../AngularWithASP/angularwithasp.client ```
+- ``` cd cd ../TodoApp/TodoApp.client ```
 2. Angular paketlerini yükle.
 - ``` npm install ```
 3. Angular uygulamasını başlat
